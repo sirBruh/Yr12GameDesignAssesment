@@ -8,19 +8,21 @@ extends CharacterBody3D
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
 
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
 var jump_velocity = 4.5
 var mouse_sens = 0.002
 var grav = 9.8
 var is_crouching = false
+var can_mantle = true
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
+	check_mantle()
 	control_loop(delta)
 	run_state()
-	check_mantle()
 	head_control()
 	move_and_slide()
 
@@ -49,8 +51,8 @@ func control_loop(delta):
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 10)
 			velocity.z = lerp(velocity.z, direction.x * speed, delta * 10)
 	else:
-		velocity.x = lerp(velocity.x, direction.x * speed, delta * 2)
-		velocity.z = lerp(velocity.z, direction.x * speed, delta * 2)
+		velocity.x = lerp(velocity.x, direction.x * speed, delta)
+		velocity.z = lerp(velocity.z, direction.x * speed, delta)
 func head_control():
 	if Input.is_action_just_pressed("Unlock"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
@@ -72,5 +74,11 @@ func run_state():
 		speed = 5
 func check_mantle():
 	var has_ledge = (face_lvl.is_colliding() and not top_head.is_colliding())
-	if has_ledge:
-		velocity.y = 0
+	if can_mantle:
+		if has_ledge:
+			velocity.y = 0
+			gravity = 0
+			if has_ledge and Input.is_action_just_pressed("Jump"):
+				self.global_position = new_pos.global_position
+		else:
+			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
