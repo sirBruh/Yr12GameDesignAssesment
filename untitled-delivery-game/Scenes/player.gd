@@ -79,6 +79,15 @@ func check_mantle():
 			velocity.y = 0
 			gravity = 0
 			if has_ledge and Input.is_action_just_pressed("Jump"):
-				self.global_position = new_pos.global_position
+				var peek = create_tween()
+				peek.tween_property(self, "position", new_pos.global_position, .75)
+				#self.global_position = new_pos.global_position
 		else:
 			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
+func _on_above_head_body_entered(body: Node3D) -> void:
+	can_mantle = false
+
+func _on_above_head_body_exited(body: Node3D) -> void:
+	can_mantle = true
