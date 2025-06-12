@@ -11,6 +11,7 @@ height = 1.0
 radius = 0.25
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
+collision_mask = 2
 script = ExtResource("1_v0iea")
 
 [node name="standing" type="CollisionShape3D" parent="."]
@@ -28,12 +29,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="top_head" type="RayCast3D" parent="raycast"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, 0, 1, 0)
+collision_mask = 2
 
 [node name="face" type="RayCast3D" parent="raycast"]
 transform = Transform3D(1.91069e-15, 3.67176e-08, 1, 1, -3.67176e-08, 0, 4.37114e-08, 0.84, -4.37114e-08, 0, 0.7, 0)
+collision_mask = 2
 
 [node name="new_pos" type="RayCast3D" parent="raycast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 1.3, -1.2)
+collision_mask = 2
 
 [node name="above_head" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99, 0)
@@ -42,8 +46,5 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="above_head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("CylinderShape3D_v0iea")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
 
 [connection signal="body_entered" from="above_head" to="." method="_on_above_head_body_entered"]

@@ -3,7 +3,6 @@ extends CharacterBody3D
 @onready var stand_col = get_node("standing")
 @onready var crouch_col = get_node("crouching")
 @onready var cam_pivot = get_node("cam_pivot")
-@onready var coyote = get_node("Timer")
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
@@ -15,7 +14,9 @@ var mouse_sens = 0.002
 var grav = 9.8
 
 var is_crouching = false
-var can_jump = true
+var last_floor = false
+var coyote = 0.1
+var air_time = 0
 var can_mantle = true
 var mouse_unlocked = false
 
@@ -23,16 +24,14 @@ var stamina = 100
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	coyote.connect("timeout", _on_timer_timeout)
 
 func _physics_process(delta: float) -> void:
+	last_floor = is_on_floor()
 	check_mantle()
 	control_loop(delta)
 	run_state()
 	head_control()
 	move_and_slide()
-	if not is_on_floor() and can_jump and coyote.is_stopped():
-		coyote.start()
 
 func control_loop(delta):
 		# Add the gravity.
@@ -40,11 +39,13 @@ func control_loop(delta):
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and (is_on_floor() or ! coyote.is_stopped()):
-		velocity.y = jump_velocity
-		can_jump = false
-
-	# Get the input direction and handle the movement/deceleration.
+	if Input.is_action_just_pressed("Jump"):
+		if is_on_floor() or air_time < coyote:
+			velocity.y = jump_velocity
+	if is_on_floor():
+		air_time = 0
+	else:
+		air_time += delta
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -99,5 +100,3 @@ func _on_above_head_body_entered(body: Node3D):
 	can_mantle = false
 func _on_above_head_body_exited(body: Node3D):
 	can_mantle = true
-func _on_timer_timeout():
-	can_jump = false
