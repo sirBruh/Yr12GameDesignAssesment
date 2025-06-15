@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://cbeh31k4w7v3k"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_17bci"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_km8l0"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.2, -1, 1, 0.2, 2),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("BAABAAAABAACAAEAAwACAAQAAwAFAAIABwAJAAsABwAIAAkABgALAAoABgAHAAsA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("///+/wAAAAAAAP7/AAAAAAAA////fwAA////////AAD//////38AAAAA/////wAA//8AAP//AAD//wAA/38AAP//AAAAAAAAAAAAAAAAAAAAAAAA//8AAAAAAAD/fwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_umn83"]
+resource_name = "ModularBrickStructures_Floor_B_2x1"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.2, -1, 1, 0.2, 2),
+"attribute_data": PackedByteArray("//9gGKmqYBipqpVl///Ksv//lWWpqsqy///Ksv//lWX//2AYqapgGKmqyrKpqpVl"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("BAABAAAABAACAAEAAwACAAQAAwAFAAIABwAJAAsABwAIAAkABgALAAoABgAHAAsA"),
+"material": ExtResource("1_17bci"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("///+/wAA/78AAP7/AAD/vwAA////f/+//////////7///////3//vwAA//////+///8AAP///z///wAA/3//P///AAAAAP8/AAAAAAAA/z8AAAAA////PwAAAAD/f/8/////f////3/+//9//v//f/7//3/+//9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_km8l0")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3c4kq"]
+data = PackedVector3Array(0.5, -2.18557e-08, -1, -0.5, 7.28523e-09, 1, -0.5, -2.18557e-08, -1, -0.5, -0.2, 1, 0.5, -0.2, -1, -0.5, -0.2, -1, 0.5, -2.18557e-08, -1, 0.5, 7.28523e-09, 1, -0.5, 7.28523e-09, 1, -0.5, -0.2, 1, 0.5, -0.2, 1, 0.5, -0.2, -1)
+
+[node name="Floor_B_2x1" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_umn83")
+skeleton = NodePath("")
+
+[node name="Floor_B_2x1" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_B_2x1"]
+shape = SubResource("ConcavePolygonShape3D_3c4kq")

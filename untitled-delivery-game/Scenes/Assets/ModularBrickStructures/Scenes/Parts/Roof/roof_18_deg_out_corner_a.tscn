@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://dspyljavvy31v"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_spq7x"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hsop2"]
+_surfaces = [{
+"aabb": AABB(-1.55912, 0.106912, -1.55912, 3.12563, 1.12161, 3.12563),
+"format": 34896613377,
+"index_count": 126,
+"index_data": PackedByteArray("AQACAAAAAwAKAAIABAACAAEABAADAAIABgADAAQABgAFAAMABQAKAAMABQAHAAoABwAIAAoACQAKAAgACwACAAoACwAJAA8ACwAKAAkADQAAAAIADQALAAwADQACAAsADAAPAA4ADAALAA8AIAAZACMAIAAWABkAGgATAB0AGgAQABMAIAAVABYAIAAfABUAHAAZABIAHAAjABkAEwAiAB0AEwAYACIAHQAjABwAHQAiACMAFwAeACEAFwAUAB4AIQAfACAAIQAeAB8AEQAcABIAEQAbABwAGwAdABwAGwAaAB0AFwAiABgAFwAhACIAIQAjACIAIQAgACMA"),
+"lods": [0.0005931, PackedByteArray("AQACAAAABAACAAEABQACAAQABgAFAAQABQAHAAIABwAIAAIACQACAAgADQACAAkADQAAAAIADQAJAAwADAAJAA8ADAAPAA4AIAAZACIAIAAWABkAFwAgACIAFwAiABgAHAAZABIAHAAiABkAEwAiABwAEwAYACIAGgATABwAGgAQABMAGwAaABwAEQAbABwAEQAcABIAIAAVABYAIAAfABUAIAAeAB8AFwAeACAAFwAUAB4A")],
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("jPrVCYz6AAClqNUJjPoAAKWo6lWlqAAAvlbqVaWoAAC+VtUJjPoAANcE6lWlqAAA1wTVCYz6AADXBP6hvlYAANcEE+7XBAAAvlb+odcEAAC+Vv6hvlYAAKWo6lW+VgAAjPrVCb5WAACM+tUJpagAAIz61QnXBAAApajqVdcEAAAAAD3krwkAALT1AABk/wAAT/YnGv//AACaAGX+SgoAAK8JPeQAAAAAZP8AALT1AAD//ycaT/YAAEoKZf6aAAAAigX//4oFAAA/+8EbP/sAAOZRKJiWWwAAzaMUTH2tAABopDxmGK4AAIFSULIxXAAAllsomOZRAAB9rRRMzaMAABiuPGZopAAAMVxQsoFSAABxV+qzcVcAAFip1mdYqQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q73m6"]
+resource_name = "ModularBrickStructures_Roof_18deg_OutCorner_A"
+_surfaces = [{
+"aabb": AABB(-1.55912, 0.106912, -1.55912, 3.12563, 1.12161, 3.12563),
+"attribute_data": PackedByteArray("/3////////9U1f//qaqf2FTVn9ipqp/Yqar///9/n9j/f////39Asf9/4In//+CJ//9AsamqQLFU1UCxVNWf2FTV//+pqv//////////n9j7/7uE/H+7hP9/bIH/f2yB//9sgf//bIH7/7uE/H+7hP9/bIH/f2yB//9sgf//bIH//w+D//8Pg/9/D4NR1buEpqq7hKqqbIGqqmyBVNVsgVTVbIFR1buEpqq7hKqqbIGqqmyBVNVsgVTVbIFU1Q+DVNUPg6mqD4Opqg+D+/+7hPx/u4T//2yB+/+7hPx/u4RR1buEpqq7hFHVu4RR1buEpqq7hKaqu4SqqmyB"),
+"format": 34896613399,
+"index_count": 126,
+"index_data": PackedByteArray("AgAEAAEABQANAAQABgAEAAIABgAFAAQACAAFAAYACAAHAAUABwANAAUABwAJAA0ACQAKAA0ADAAOAAsADwADAA4ADwAMABMADwAOAAwAEQAAAAMAEQAPABAAEQADAA8AEAATABIAEAAPABMAKwAiADIAKwAcACIAIwAZACgAIwAUABkALAAbAB0ALAAqABsAJQAiABYAJQAxACIAGAAvACcAGAAgAC8AJwAxACUAJwAvADEAHwApAC4AHwAaACkALgAqACwALgApACoAFQAmABcAFQAkACYAJAAoACYAJAAjACgAHgAwACEAHgAtADAALQAyADAALQArADIA"),
+"lods": [0.0005931, PackedByteArray("AgAEAAEABgAEAAIABwAEAAYACAAHAAYABwAJAAQACQAKAAQADAADAAsAEQADAAwAEQAAAAMAEQAMABAAEAAMABMAEAATABIAKwAiADAAKwAcACIAHgArADAAHgAwACEAJQAiABYAJQAvACIAGAAvACUAGAAgAC8AIwA1ACYAOAAzADUAOQAjACYANAA5ACYANAAmABcAPgA3AB0APgA8ADcAPgA7AD0AHwA6AD4AHwA2ADoA")],
+"material": ExtResource("1_spq7x"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 63,
+"vertex_data": PackedByteArray("jPrVCYz6ac2M+tUJjPqWuaWo1QmM+uOypajqVaWoac2lqOpVpaiWub5W6lWlqOOyvlbVCYz647LXBOpVpajjstcE1QmM+uOy1wT+ob5W47LXBBPu1wSWudcEE+7XBGnNvlb+odcENs6+Vv6hvlaWub5W/qG+VmnNpajqVb5WNs6M+tUJvlY2zoz61QmlqDbOjPrVCdcENs6lqOpV1wQ2zgAAPeSvCbUItPUAAGT/tQhP9ica//8b5E/2Jxr//7UImgBl/koKG+SaAGX+Sgq1CK8JPeQAADjgZP8AALT1OOD//ycaT/ZUHf//JxpP9jjgSgpl/poAVB1KCmX+mgA44IoF//+KBVzjigX//4oFohw/+8EbP/tc4+ZRKJiWW7UIzaMUTH2ttQhopDxmGK4b5GikPGYYrrUIgVJQsjFcG+SBUlCyMVy1CJZbKJjmUTjgfa0UTM2jOOAYrjxmaKRUHRiuPGZopDjgMVxQsoFSVB0xXFCygVI44HFX6rNxV1zjcVfqs3FXohxYqdZnWKlc41ip1mdYqaIcAAA95K8JKhC09QAAZP/UDJoAZf5KCqsLrwk95AAAKt9k/wAAtPW/3+ZRKJiWWzcSzaMUTH2trwqWWyiY5lGI35ZbKJjmUfDefa0UTM2jqd99rRRMzaPv3hiuPGZopL3fAdMdJqfshnX///9/AdMdJqfshnX///9/////f////3////9/////f6fshnUB0x0mksvJJafshnUB0x0mksvJJZLLySWSy8klksvJJZLLySXH+73bx/u92+XNuRHH+73b5c25Ecf7vdvsbccM7G3HDAPIcw/sbccMA8hzD+xtxwz6ypgQ+sqYEPrKmBDH+73bx/u92+XNuRHH+73b5c25Ecf7vdvsbccM7G3HDAPIcw/sbccMA8hzD+xtxwz6ypgQ+sqYEPrKmBD6ypgQie+2Hn34KyK++20jtWU9Bd1q+Akr6qMckf6EJD5pfAhto1MBO2pkCe+iIgHQauwJ")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hsop2")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w10bu"]
+data = PackedVector3Array(-1.4335, 1.22151, -1.55174, 1.5665, 0.221506, 1.44826, 1.44826, 0.221506, 1.5665, -1.4335, 1.22151, -1.55174, 1.44826, 0.221506, 1.5665, -1.55174, 1.22151, -1.43349, 1.5665, 0.221506, 1.44826, -1.44088, 1.10691, -1.55912, 1.55912, 0.106912, 1.44088, -1.5, 0.15, 1.5, 1.5, 0.15, -1.5, 1.5, 0.15, 1.5, 1.44826, 0.221506, 1.5665, -1.55912, 1.10691, -1.44088, -1.55174, 1.22151, -1.43349, 1.5665, 0.221506, 1.44826, -1.4335, 1.22151, -1.55174, -1.44088, 1.10691, -1.55912, 1.44826, 0.221506, 1.5665, 1.44088, 0.106912, 1.55912, -1.55912, 1.10691, -1.44088, -1.5, 0.15, 1.5, -1.5, 1.15, -1.5, 1.5, 0.15, -1.5)
+
+[node name="Roof_18deg_OutCorner_A" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_q73m6")
+skeleton = NodePath("")
+
+[node name="Roof_18deg_OutCorner_A" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_18deg_OutCorner_A"]
+shape = SubResource("ConcavePolygonShape3D_w10bu")

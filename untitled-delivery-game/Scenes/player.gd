@@ -96,7 +96,7 @@ func check_mantle():
 				
 		else:
 			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-func _on_above_head_body_entered(body: Node3D):
+func _on_above_head_body_entered(_body: Node3D):
 	can_mantle = false
-func _on_above_head_body_exited(body: Node3D):
+func _on_above_head_body_exited(_body: Node3D):
 	can_mantle = true

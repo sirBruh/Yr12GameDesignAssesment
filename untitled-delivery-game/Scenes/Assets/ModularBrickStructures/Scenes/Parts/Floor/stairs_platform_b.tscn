@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://bnmnh6rsxxblr"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_kn6wq"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gxhqq"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -0.5, 2, 1, 1),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAAEAAEAAAACAAQAAgAFAAQAAgADAAUABwAIAAYABwAJAAgAAQAHAAAAAQAJAAcA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("/3//////AAD/f///AAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAAAAAAAAAAAA//8AAP//AAD///////8AAP//AAAAAAAA/////wAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3haqn"]
+resource_name = "ModularBrickStructures_Stairs_Platform_B"
+_surfaces = [{
+"aabb": AABB(-1, 0, -0.5, 2, 1, 1),
+"attribute_data": PackedByteArray("/9/+///fZNn/v/7/0H9k2f+/ZNn/v2TZ0H////+//v//v2TZ///+/9B/ZNn/v/7///9k2dB///8="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAAFAAEAAAACAAUAAwAHAAYAAwAEAAcACgALAAgACgANAAsAAQAJAAAAAQAMAAkA"),
+"material": ExtResource("1_kn6wq"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(2.66667, 2, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("/3///////7//f///AAD/vwAA//////+/AAD/////VNUAAAAA//9U1QAA//8AAP+/AAD//wAAVNUAAAAAAABU1f//AAD//6oq/////////7////////+qKv//AAAAAKoq/////wAA/7//////AACqKv///3////9/////f1RVqapUVaqq////f1RVqapUVamqqqpUVf///3+qqlRVqqpUVf///3+pqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gxhqq")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3jvyn"]
+data = PackedVector3Array(-1, 1, -0.5, -1, 0, 0.5, -1, 0, -0.5, -1, 1, -0.5, -1, 1, 0.5, -1, 0, 0.5, 0.999998, 0, 0.5, 0.999998, 1, 0.5, 0.999998, 1, -0.5, 0.999998, 0, 0.5, 0.999998, 1, -0.5, 0.999998, 0, -0.5, 0.999998, 1, 0.5, -1, 1, 0.5, -1, 1, -0.5, 0.999998, 1, 0.5, -1, 1, -0.5, 0.999998, 1, -0.5)
+
+[node name="Stairs_Platform_B" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_3haqn")
+skeleton = NodePath("")
+
+[node name="Stairs_Platform_B" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_Platform_B"]
+shape = SubResource("ConcavePolygonShape3D_3jvyn")

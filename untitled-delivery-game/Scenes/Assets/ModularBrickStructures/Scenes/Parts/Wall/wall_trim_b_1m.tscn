@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://bhkt87juafd8d"]
+
+[ext_resource type="Material" uid="uid://cm5bfoasqwgdx" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Wall_A.material" id="1_hs2y2"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d3dw3"]
+_surfaces = [{
+"aabb": AABB(-0.500002, -0.3, -0.0390076, 1, 0.3, 0.0780153),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AQAFAAAAAQAEAAUAAwAFAAQAAwACAAUA"),
+"name": "ConcreteWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("/v8AAAAAAAAAAAAAAAAAAP///v///wAAAAD/////AAAAAAAA//8AAP7/AAD//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t6jsj"]
+resource_name = "ModularBrickStructures_Wall_Trim_B_1m"
+_surfaces = [{
+"aabb": AABB(-0.500002, -0.3, -0.0390076, 1, 0.3, 0.0780153),
+"attribute_data": PackedByteArray("VFUAAKmqAABUVZ4bqaqeG6mqAACpqp4bVFUAAFRVnhs="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AQAHAAAAAQAFAAcAAwAGAAQAAwACAAYA"),
+"material": ExtResource("1_hs2y2"),
+"name": "ConcreteWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/v8AAAAA//8AAAAAAAD//////v//////AAD///////8AAAAA/////wAAAAD//////v8AAP/////+/wAA//////9//z//f/8//3//f/9//3//f/9//3//P/9//3//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d3dw3")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3rw2o"]
+data = PackedVector3Array(0.499998, -0.3, -0.0390076, -0.500002, -0.3, -0.0390076, -0.500002, -0.3, 0.0390076, -0.500002, -2.56751e-08, 0.0390076, 0.499998, -3.51517e-07, 0.0390076, 0.499998, -0.3, 0.0390076, 0.499998, -0.3, -0.0390076, -0.500002, -0.3, 0.0390076, 0.499998, -0.3, 0.0390076, -0.500002, -2.56751e-08, 0.0390076, 0.499998, -0.3, 0.0390076, -0.500002, -0.3, 0.0390076)
+
+[node name="Wall_Trim_B_1m" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_t6jsj")
+skeleton = NodePath("")
+
+[node name="Wall_Trim_B_1m" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Trim_B_1m"]
+shape = SubResource("ConcavePolygonShape3D_3rw2o")

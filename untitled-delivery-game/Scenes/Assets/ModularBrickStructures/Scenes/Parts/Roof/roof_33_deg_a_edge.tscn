@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://bhij0ejm35xmy"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_ohikr"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h0ewn"]
+_surfaces = [{
+"aabb": AABB(-1.5, -0.0834657, 0, 3, 0.233466, 0.211538),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("FgADAA8AFgABAAMADwACABMADwADAAIAEAAKAAkAEAASAAoACgAHAAgACgAGAAcACwAEAAUACwAJAAQACQAIAAQACQAKAAgAEwAAAAwAEwACAAAAFQAJAAsAFQAQAAkAEwARAA8AEwAUABEAFAAQABEAFAASABAADwAXABYADwARABcAEQAVABcAEQAQABUADAAUABMADAAOABQADgASABQADgANABIAEgAGAAoAEgANAAYA"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAFVVAAAAAAAAqqoAAAAAAACqqv//AAAAAP////8AAAAAAABcZf//AAAAAP//AAAAAFVV//8AAAAAqqpcZf//AABVVVxl//8AAP//XGX//wAAAAAAAMHLAAAAAKoy//8AAAAAOVLBywAAqqoAAMHLAACqqqoy//8AAKqqOVLBywAAVVWqMv//AABVVQAAwcsAAFVVOVLBywAA//+qMv//AAD//wAAwcsAAP//OVLBywAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1j42c"]
+resource_name = "ModularBrickStructures_Roof_33Deg_A_Edge"
+_surfaces = [{
+"aabb": AABB(-1.5, -0.0834657, 0, 3, 0.233466, 0.211538),
+"attribute_data": PackedByteArray("VH+viVP/r4lT/6+JVH+viVP/r4lUf6+JVNWq9///qvf/f////3+q96qqqvdU1f//VNX//6mq//+pqv////////////9Uf6+JVH95hv9/bf3/f239VH95hv9/jPpT/6+JVH+viVP/eYZUf3mGVNVt/VTVbf1T/3mGVH95hlTVjPqpqm39qapt/amqbf2pqm39U/+viVR/r4lT/3mGVH95hlP/eYZUf3mGqaqM+v//bf3//239U/+viVP/eYZT/3mG//+M+g=="),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("LgAFABoALgABAAUAGQADACcAGQAEAAMAGwAOAAwAGwAgAA4ADQAJAAoADQAIAAkADwAGAAcADwALAAYACwAKAAYACwANAAoAJgAAABIAJgACAAAAKwAMABAAKwAbAAwAJQAdABcAJQApAB0AKgAcAB8AKgAiABwAGAAvAC0AGAAeAC8AHwAsADAAHwAcACwAEQAoACQAEQAVACgAFgAjACoAFgAUACMAIQAIAA4AIQATAAgA"),
+"material": ExtResource("1_ohikr"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 49,
+"vertex_data": PackedByteArray("AAAAAAAA/7///wAAAAD/v1VVAAAAAP+/VVUAAAAA/7+qqgAAAAD/v6qqAAAAAP+/qqr//wAACqj/////AAAKqAAAXGX///lrAAD//wAACqhVVf//AAAKqKqqXGX//wWUqqpcZf//+WtVVVxl//8FlFVVXGX///lr//9cZf//BZT//1xl///5awAAAADBywCAAAAAAMHL/78AAKoy///+fwAAqjL//wooAAA5UsHLAIAAADlSwcsKKKqqAADBywCAqqoAAMHLAICqqgAAwcv/v6qqAADBy/+/qqqqMv///n+qqqoy//8KKKqqOVLBywCAqqo5UsHLAICqqjlSwcsKKFVVqjL///5/VVWqMv///n9VVaoy//8KKFVVqjL//wooVVUAAMHLAIBVVQAAwcsAgFVVAADBy/+/VVUAAMHL/79VVTlSwcsAgFVVOVLBywCAVVU5UsHLCij//6oy///+f///qjL//woo//8AAMHLAID//wAAwcv/v///OVLBywCA//85UsHLCigAAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////3////9/////f/9///8AAP9//3///wAA/3//f///AAD/f/9/////f///AAD/fwAA/3//f///AAD/f/9/////f///AAD/f/9/////f///AAD/fwAA/3//f////3///wAA/38AAP9//3////9///8AAP9//3///wAA/3//f///AAD/f/9///8AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_h0ewn")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a4tvu"]
+data = PackedVector3Array(-1.5, -0.0834657, 0.168369, 1.5, -0.0834657, 0.168369, 1.5, -0.0834657, 0, -1.5, 0.15, 0, 1.5, 0.15, 0, 1.5, 0.00897434, 0.211538, 1.5, 0.00897434, 0.211538, 1.5, -0.0372579, 0.211538, -1.5, -0.0372579, 0.211538, -1.5, 0.15, 0, 1.5, 0.00897434, 0.211538, -1.5, 0.00897434, 0.211538, 1.5, -0.0084779, 0.168369, 1.5, -0.0834657, 0.168369, -1.5, -0.0834657, 0.168369, 1.5, -0.0372579, 0.211538, -1.5, -0.00847791, 0.168369, -1.5, -0.0372579, 0.211538, 1.5, -0.0084779, 0.168369, -1.5, -0.0834657, 0.168369, -1.5, -0.00847791, 0.168369, 1.5, -0.0372579, 0.211538, 1.5, -0.0084779, 0.168369, -1.5, -0.00847791, 0.168369, -1.5, -0.0834657, 0.168369, 1.5, -0.0834657, 0, -1.5, -0.0834657, 0, 1.5, 0.00897434, 0.211538, -1.5, -0.0372579, 0.211538, -1.5, 0.00897434, 0.211538)
+
+[node name="Roof_33Deg_A_Edge" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_1j42c")
+skeleton = NodePath("")
+
+[node name="Roof_33Deg_A_Edge" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_33Deg_A_Edge"]
+shape = SubResource("ConcavePolygonShape3D_a4tvu")

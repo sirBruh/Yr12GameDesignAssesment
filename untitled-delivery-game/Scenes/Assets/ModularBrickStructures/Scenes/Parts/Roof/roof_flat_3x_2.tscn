@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://dariut5ykmpdy"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_ft5kn"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ca8ey"]
+_surfaces = [{
+"aabb": AABB(-1, 0.15, -1.5, 2, 1e-05, 3),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("CwADAAkACwACAAMACgACAAsACgAFAAIABAAIAAYABAAHAAgABwALAAgABwAKAAsABgAAAAEABgAIAAAACAAJAAAACAALAAkA"),
+"lods": [1e-10, PackedByteArray("CgACAAMACgAFAAIABwAKAAMABwADAAYABAAHAAYABgADAAkABgAJAAAABgAAAAEA")],
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAKqqAAD//wAA//8AAP9/AAAAAAAA//8AAAAAAAAAAAAA//8AAAAAAAAAAAAA/38AAP//AAAAAAAAqqoAAP9/AACqqgAA//8AAFVVAAAAAAAAVVUAAP9/AABVVQAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ut410"]
+resource_name = "ModularBrickStructures_Roof_Flat_3x2"
+_surfaces = [{
+"aabb": AABB(-1, 0.15, -1.5, 2, 1e-05, 3),
+"attribute_data": PackedByteArray("//9Asf////+qqsIT///CE1RV/v9VVcITqar+/1RVQLGpqkCx//+BYlRVgWKpqoFi"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("CwADAAkACwACAAMACgACAAsACgAFAAIABAAIAAYABAAHAAgABwALAAgABwAKAAsABgAAAAEABgAIAAAACAAJAAAACAALAAkA"),
+"lods": [1e-10, PackedByteArray("CgACAAMACgAFAAIABwAKAAMABwADAAYABAAHAAYABgADAAkABgAJAAAABgAAAAEA")],
+"material": ExtResource("1_ft5kn"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAKqq/7///wAA////v/9/AAAAAP+///8AAAAA/78AAAAA////vwAAAAAAAP+//38AAP///78AAAAAqqr/v/9/AACqqv+///8AAFVV/78AAAAAVVX/v/9/AABVVf+/////f/7//3////9/////f////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ca8ey")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_l38n4"]
+data = PackedVector3Array(1, 0.15, -1.5, 1, 0.15, 1.5, -1, 0.15, 1.5, 1, 0.15, -1.5, -1, 0.15, 1.5, -1, 0.15, -1.5)
+
+[node name="Roof_Flat_3x2" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_ut410")
+skeleton = NodePath("")
+
+[node name="Roof_Flat_3x2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_Flat_3x2"]
+shape = SubResource("ConcavePolygonShape3D_l38n4")

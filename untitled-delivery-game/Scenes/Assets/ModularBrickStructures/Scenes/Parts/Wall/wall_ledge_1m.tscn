@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://dprs6gswv5uy"]
+
+[ext_resource type="Material" uid="uid://cm5bfoasqwgdx" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Wall_A.material" id="1_qv2t0"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hdsqv"]
+_surfaces = [{
+"aabb": AABB(-0.500001, 8.9407e-08, -0.122449, 1, 0.3, 0.244898),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("BgABAAcABgAAAAEABQABAAMABQAHAAEAAgAGAAQAAgAAAAYAAgAFAAMAAgAEAAUA"),
+"name": "ConcreteWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAAAAAAAP////8AAAAA//8AAP//AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q12uj"]
+resource_name = "ModularBrickStructures_Wall_Ledge_1m"
+_surfaces = [{
+"aabb": AABB(-0.500001, 8.9407e-08, -0.122449, 1, 0.3, 0.244898),
+"attribute_data": PackedByteArray("/3/+//9//3//f/9//3/+//9//3//f/7//3/+//9//3////9///////////////9//////////3////9//////w=="),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("DAACAA4ADAAAAAIACwADAAcACwAPAAMABQANAAkABQABAA0ABAAKAAYABAAIAAoA"),
+"material": ExtResource("1_qv2t0"),
+"name": "ConcreteWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0.666667, 0.215793, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AIAAAAAA////vwAA/////wCAAAD//////78AAAAAAAD//wAAAAAAAP+/AAD//wAA//8AAP//AAD/v///AAAAAP////8AAAAA/7//////AAD///////8AAP+///8AAP//AID//wAA////v////////wCA/////////7//f///AAD/f/9///////9//v//fwAA/3/+//9/////f/7//38AAP9//v//f////3//f///AAD/f/9///////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hdsqv")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d32ma"]
+data = PackedVector3Array(0.5, 0.3, 0.122449, 0.5, 8.9407e-08, 0.122449, -0.500001, 8.9407e-08, 0.122449, -0.500001, 0.3, -0.122449, 0.5, 0.3, -0.122449, 0.5, 0.3, 0.122449, 0.5, 8.9407e-08, -0.122449, -0.500001, 8.9407e-08, -0.122449, -0.500001, 8.9407e-08, 0.122449, -0.500001, 0.3, -0.122449, -0.500001, 8.9407e-08, -0.122449, 0.5, 8.9407e-08, -0.122449, 0.5, 0.3, 0.122449, -0.500001, 8.9407e-08, 0.122449, -0.500001, 0.3, 0.122449, -0.500001, 0.3, -0.122449, 0.5, 0.3, 0.122449, -0.500001, 0.3, 0.122449, 0.5, 8.9407e-08, -0.122449, -0.500001, 8.9407e-08, 0.122449, 0.5, 8.9407e-08, 0.122449, -0.500001, 0.3, -0.122449, 0.5, 8.9407e-08, -0.122449, 0.5, 0.3, -0.122449)
+
+[node name="Wall_Ledge_1m" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_q12uj")
+skeleton = NodePath("")
+
+[node name="Wall_Ledge_1m" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Ledge_1m"]
+shape = SubResource("ConcavePolygonShape3D_d32ma")

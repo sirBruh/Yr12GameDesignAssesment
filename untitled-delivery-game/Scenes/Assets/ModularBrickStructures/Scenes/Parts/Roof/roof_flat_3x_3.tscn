@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://bsxwkgrejgk8f"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_hmvbu"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3eu7o"]
+_surfaces = [{
+"aabb": AABB(-1.5, 0.15, -1.5, 3, 1e-05, 3),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("DwADAAwADwACAAMABAAIAA4ABAAFAAgADgACAA8ADgAIAAIABgALAAkABgAKAAsACgAPAAsACgAOAA8ABwAKAAYABwANAAoADQAOAAoADQAEAA4ACQAAAAEACQALAAAACwAMAAAACwAPAAwA"),
+"lods": [1e-10, PackedByteArray("BAAFAAgABAAIAAIABAACAAMABgAEAAMADQAEAAYABwANAAYABgADAAkACQADAAwACQAMAAAACQAAAAEA")],
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8AAKqqAAD//wAA//8AAKqqAAAAAAAA//8AAAAAAAAAAAAAVVUAAAAAAAAAAAAAVVUAAP//AAAAAAAA//8AAFVVAAAAAAAAqqoAAP//AABVVQAAqqoAAKqqAACqqgAA//8AAFVVAAAAAAAAqqoAAFVVAABVVQAAqqoAAFVVAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3evpl"]
+resource_name = "ModularBrickStructures_Roof_Flat_3x3"
+_surfaces = [{
+"aabb": AABB(-1.5, 0.15, -1.5, 3, 1e-05, 3),
+"attribute_data": PackedByteArray("//9Asf////+qqsIT///CEwAAgWIAAMITVFX+/wAA/v9VVcITqar+/1RVQLGpqkCx//+BYgAAQLFUVYFiqaqBYg=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("DwADAAwADwACAAMABAAIAA4ABAAFAAgADgACAA8ADgAIAAIABgALAAkABgAKAAsACgAPAAsACgAOAA8ABwAKAAYABwANAAoADQAOAAoADQAEAA4ACQAAAAEACQALAAAACwAMAAAACwAPAAwA"),
+"lods": [1e-10, PackedByteArray("BAAFAAgABAAIAAIABAACAAMABgAEAAMADQAEAAYABwANAAYABgADAAkACQADAAwACQAMAAAACQAAAAEA")],
+"material": ExtResource("1_hmvbu"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//8AAKqq/7///wAA////v6qqAAAAAP+///8AAAAA/78AAAAAVVX/vwAAAAAAAP+/VVUAAP///78AAAAA////v1VVAAAAAP+/qqoAAP///79VVQAAqqr/v6qqAACqqv+///8AAFVV/78AAAAAqqr/v1VVAABVVf+/qqoAAFVV/7////9//v//f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3eu7o")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dxy2c"]
+data = PackedVector3Array(-1.5, 0.15, 1.5, -1.5, 0.15, -1.5, 1.5, 0.15, -1.5, -1.5, 0.15, 1.5, 1.5, 0.15, -1.5, 1.5, 0.15, 1.5)
+
+[node name="Roof_Flat_3x3" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_3evpl")
+skeleton = NodePath("")
+
+[node name="Roof_Flat_3x3" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_Flat_3x3"]
+shape = SubResource("ConcavePolygonShape3D_dxy2c")

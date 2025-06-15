@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://d4hld0nxnt40a"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_1hwgs"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a0fyf"]
+_surfaces = [{
+"aabb": AABB(-1.5, 0, -0.5, 3, 1, 1),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAAEAAEAAAACAAQAAgAFAAQAAgADAAUAAQAGAAAAAQAHAAYACQAKAAgACQALAAoABwAJAAYABwALAAkA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("VVX/////AABVVf//AAAAAAAA/////wAAAAAAAP//AAAAAP//AAAAAAAAAAAAAAAAqqr/////AACqqv//AAAAAP//AAD//wAA////////AAD//wAAAAAAAP////8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wvcut"]
+resource_name = "ModularBrickStructures_Stairs_Platform_C"
+_surfaces = [{
+"aabb": AABB(-1.5, 0, -0.5, 3, 1, 1),
+"attribute_data": PackedByteArray("y8z+/8vMZNkys/7/2X9k2TKzZNkys2TZ2X///zKz/v9l5v7/ZeZk2TKzZNn///7/2X9k2TKz/v/+/2TZ2X///w=="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAAFAAEAAAACAAUAAwAHAAYAAwAEAAcAAQAIAAAAAQAJAAgADAANAAoADAAPAA0ACQALAAgACQAOAAsA"),
+"material": ExtResource("1_1hwgs"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(3.33333, 2, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("VVX//////79VVf//AAD/vwAA//////+/AAD/////VNUAAAAA//9U1QAA//8AAP+/AAD//wAAVNUAAAAAAABU1aqq//////+/qqr//wAA/7///wAA//+qKv////////+/////////qir//wAAAACqKv////8AAP+//////wAAqir///9/////f////39UVamqVFWqqv///39UVamqVFWpqv///3////9/qqpUVf///3+qqlRVqqpUVf///3+pqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_a0fyf")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_oe5x7"]
+data = PackedVector3Array(-1.5, 1, -0.5, -1.5, 0, 0.5, -1.5, 0, -0.5, -1.5, 1, -0.5, -1.5, 1, 0.5, -1.5, 0, 0.5, 1.5, 1, 0.5, -1.5, 1, 0.5, -1.5, 1, -0.5, 1.5, 0, 0.5, 1.5, 1, 0.5, 1.5, 1, -0.5, 1.5, 0, 0.5, 1.5, 1, -0.5, 1.5, 0, -0.5, 1.5, 1, 0.5, -1.5, 1, -0.5, 1.5, 1, -0.5)
+
+[node name="Stairs_Platform_C" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_wvcut")
+skeleton = NodePath("")
+
+[node name="Stairs_Platform_C" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stairs_Platform_C"]
+shape = SubResource("ConcavePolygonShape3D_oe5x7")

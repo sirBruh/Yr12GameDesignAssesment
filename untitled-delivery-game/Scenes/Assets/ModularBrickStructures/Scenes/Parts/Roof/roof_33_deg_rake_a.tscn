@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://dphcr4an0k4oy"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_xypf2"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yi31d"]
+_surfaces = [{
+"aabb": AABB(-0.116359, -0.101371, -3, 0.116359, 2.32717, 3),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("EAAEABEAEAAHAAQAEwAGABIAEwAFAAYAEAAGAAcAEAASAAYACwAMAA8ACwAIAAwACQAOAA0ACQAKAA4AAwAKAAIAAwALAAoAAgAJAAEAAgAKAAkAAAALAAMAAAAIAAsACwAOAAoACwAPAA4ABgAPAAcABgAOAA8ABQAOAAYABQANAA4ABwAMAAQABwAPAAwAAwASABAAAwACABIAAQASAAIAAQATABIAAwARAAAAAwAQABEA"),
+"lods": [0.0397862, PackedByteArray("BgAEABEAAwAGABEAAwARAAAAAQAGAAMAAQATAAYAEwAFAAYACwAMAA8ACwAIAAwACQALAA8ACQAPAA0AAwAJAAEAAwALAAkAAAALAAMAAAAIAAsABQAPAAYABQANAA8ABgAPAAwABgAMAAQA")],
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("ezYAAP//AAB7NgHcAAAAAHs2q5JVVQAAezZVSaqqAAB7Nv0j//8AAHs2//8AAAAAezaptlVVAAB7NlNtqqoAAP7/AAD//wAA//8B3AAAAAD+/6uSVVUAAP7/VUmqqgAA/v/9I///AAD/////AAAAAP7/qbZVVQAA/v9TbaqqAAAAAFRbqqoAAAAA/hH//wAAAACqpFVVAAAAAADuAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iy853"]
+resource_name = "ModularBrickStructures_Roof_33Deg_Rake_A"
+_surfaces = [{
+"aabb": AABB(-0.116359, -0.101371, -3, 0.116359, 2.32717, 3),
+"attribute_data": PackedByteArray("+BIfCFztygv//x8IVQDKC/ywHwhYT8oLWE/KC/phHwhansoLBu0fCFztaAAAAB8IVQBoAAJPHwhYT2gAWE9oAASeHwhanmgAWp5oAPgSbQAG7W0A//9tAAAAbQD8sG0AAk9tAPphbQAEnm0ABu1tAAbtxAsAAG0AAADECwJPbQACT8QLBJ5tAASexAtanhkGXO0ZBlhPGQZVABkG"),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("IwAKACQAIwARAAoAJgAPACUAJgAMAA8AIwAOABIAIwAlAA4AGgAcACIAGgAUABwAFgAgAB4AFgAYACAABwAXAAQABwAZABcABAAVAAIABAAXABUAAAAZAAcAAAATABkAGgAgABgAGgAiACAADQAhABAADQAfACEACwAfAA0ACwAdAB8AEAAbAAkAEAAhABsACAAlACMACAAGACUAAwAlAAUAAwAmACUACAAkAAEACAAjACQA"),
+"lods": [0.0397862, PackedByteArray("DgAKACQACAAOACQACAAkAAEAAwAOAAgAAwAmAA4AJgAMAA4AGgAcACIAGgAUABwAFgAaACIAFgAiAB4ABwAVAAIABwAZABUAAAAZAAcAAAATABkACwAhAA0ACwAdACEADQAhABsADQAbAAkA")],
+"material": ExtResource("1_xypf2"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 39,
+"vertex_data": PackedByteArray("ezYAAP//RuR7NgAA//+8xXs2AdwAAEbkezYB3AAAvMV7NquSVVVG5Hs2q5JVVbzFezarklVVvMV7NlVJqqpG5Hs2VUmqqrzFezb9I///Jcl7Nv0j//+rwXs2//8AACXJezb//wAAq8F7Nqm2VVUlyXs2qbZVVavBezaptlVVq8F7NlNtqqolyXs2U22qqqvBezZTbaqqq8H+/wAA//9G5P7/AAD//y7v//8B3AAARuT//wHcAAAu7/7/q5JVVUbk/v+rklVVLu/+/1VJqqpG5P7/VUmqqi7v/v/9I///Jcn+//0j//8u7/////8AACXJ/////wAALu/+/6m2VVUlyf7/qbZVVS7v/v9TbaqqJcn+/1Ntqqou7wAAVFuqqmzDAAD+Ef//OMQAAKqkVVVswwAAAO4AALPCgk2CTTFhh9CCTYJNMWGH0IJNgk0xYYfQMWGH0IJNgk0xYYfQFaEVocJu4s4VoRWhwm7izhWhFaHCbuLOwm7izhWhFaHCbuLOwm7izoJNgk2Vtytvgk2CTZW3K2+CTYJNlbcrb4JNgk2VtytvFaEVoZW3K28VoRWhlbcrbxWhFaGVtytvFaEVoZW3K2/cZ7jPWmUG0NxnuM9mamnP")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yi31d")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yss4k"]
+data = PackedVector3Array(-0.0915945, 1.89863, -3, -0.0915945, 2.2258, -3, -0.0915946, 0.2258, -4.00373e-09, -0.0915945, 1.89863, -3, -0.0915946, 0.2258, -4.00373e-09, -0.0915946, -0.101371, -4.00373e-09, -0.0915946, 0.2258, -4.00373e-09, 1.26277e-07, 2.2258, -3, 4.37114e-08, 0.2258, 1.91069e-15, 1.26277e-07, 1.89863, -3, 4.37114e-08, -0.101371, 1.91069e-15, 4.37114e-08, 0.2258, 1.91069e-15, 1.26277e-07, 1.89863, -3, -0.0915945, 1.89863, -3, -0.0915946, -0.101371, -4.00373e-09, -0.0915946, 0.2258, -4.00373e-09, -0.0915945, 2.2258, -3, 1.26277e-07, 2.2258, -3, 1.26277e-07, 1.89863, -3, -0.0915946, -0.101371, -4.00373e-09, 4.37114e-08, -0.101371, 1.91069e-15, 1.26277e-07, 1.89863, -3, 4.37114e-08, 0.2258, 1.91069e-15, 1.26277e-07, 2.2258, -3)
+
+[node name="Roof_33Deg_Rake_A" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_iy853")
+skeleton = NodePath("")
+
+[node name="Roof_33Deg_Rake_A" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_33Deg_Rake_A"]
+shape = SubResource("ConcavePolygonShape3D_yss4k")

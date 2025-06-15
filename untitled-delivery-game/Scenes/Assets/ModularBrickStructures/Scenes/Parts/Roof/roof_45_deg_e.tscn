@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://dltr4cyugmhcl"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_vt06p"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_78ncu"]
+_surfaces = [{
+"aabb": AABB(-1, 0.15, -1.5, 2, 1.5, 1.5),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AgADAAEAAgAEAAMABAAFAAMABAAAAAUAAwAIAAcAAwAFAAgAAQAHAAYAAQADAAcA"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("AAAAAP//AAD//6mqVVUAAP//AAD//wAA/3+pqlVVAAD/fwAA//8AAAAAqapVVQAA/////wAAAAD/f///AAAAAAAA/v8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j6lo2"]
+resource_name = "ModularBrickStructures_Roof_45deg_E"
+_surfaces = [{
+"aabb": AABB(-1, 0.15, -1.5, 2, 1.5, 1.5),
+"attribute_data": PackedByteArray("VFX+////QLH/////qqpAsamq/v9VVUCx///giaqq4IlVVeCJ"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AgADAAEAAgAEAAMABAAFAAMABAAAAAUAAwAIAAcAAwAFAAgAAQAHAAYAAQADAAcA"),
+"material": ExtResource("1_vt06p"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("AAAAAP///5///6mqVVX/n///AAD///+f/3+pqlVV/5//fwAA////nwAAqapVVf+f/////wAA/5//f///AAD/nwAA/v8AAP+f////f////3////9/////f/7//3/+//9/////f////3/+//9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_78ncu")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pr0di"]
+data = PackedVector3Array(1, 0.15, 0, -1, 0.15, 0, -1, 1.65, -1.5, 1, 0.15, 0, -1, 1.65, -1.5, 1, 1.65, -1.5)
+
+[node name="Roof_45deg_E" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_j6lo2")
+skeleton = NodePath("")
+
+[node name="Roof_45deg_E" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_45deg_E"]
+shape = SubResource("ConcavePolygonShape3D_pr0di")

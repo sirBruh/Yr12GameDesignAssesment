@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://dnt6yij6h2owp"]
+
+[ext_resource type="Material" uid="uid://ef5c8g854sbc" path="res://Scenes/Assets/ModularBrickStructures/Materials/Bricks_A.material" id="1_oa4ah"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vs0k8"]
+_surfaces = [{
+"aabb": AABB(-1.09278e-07, 0, -1.5, 1e-05, 2, 3),
+"format": 34896613377,
+"index_count": 27,
+"index_data": PackedByteArray("CQADAAEABQACAAYABQAAAAIABwAGAAgABAAGAAcABAAFAAYAAgAIAAYACAADAAkACAACAAMA"),
+"name": "BrickWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AAAAAAAAAABbAwAA//8AAB4BAABVVQAAPAIAAKqqAAA+Af//AAAAAJ8A/38AAAAAvQH/f1VVAADyAaqqVVUAAEwC/3//fwAApwJVVaqqAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m1yvc"]
+resource_name = "ModularBrickStructures_Roof_33Deg_Wall_B"
+_surfaces = [{
+"aabb": AABB(-1.09278e-07, 0, -1.5, 1e-05, 2, 3),
+"attribute_data": PackedByteArray("AAD///////9VVf//qqr//wAAzW0AAOa2VFXmtlRViJ7/f+a2qapDzw=="),
+"format": 34896613399,
+"index_count": 27,
+"index_data": PackedByteArray("CQADAAEABQACAAYABQAAAAIABwAGAAgABAAGAAcABAAFAAYAAgAIAAYACAADAAkACAACAAMA"),
+"material": ExtResource("1_oa4ah"),
+"name": "BrickWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AAAAAAAAAABbAwAA//8AAB4BAABVVQAAPAIAAKqqAAA+Af//AAAAAJ8A/38AAAAAvQH/f1VVAADyAaqqVVUAAEwC/3//fwAApwJVVaqqAAD/v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vs0k8")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ddixt"]
+data = PackedVector3Array(-6.07103e-08, 2, -1.5, -1.09278e-07, 0, -1.5, 2.18557e-08, 0, 1.5)
+
+[node name="Roof_33Deg_Wall_B" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_m1yvc")
+skeleton = NodePath("")
+
+[node name="Roof_33Deg_Wall_B" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_33Deg_Wall_B"]
+shape = SubResource("ConcavePolygonShape3D_ddixt")

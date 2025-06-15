@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://bygkjp00aicus"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_8bh8i"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ctctl"]
+_surfaces = [{
+"aabb": AABB(-0.144, -0.27, -0.144, 0.288, 0.401326, 0.288),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ih610"]
+resource_name = "ModularBrickStructures_Floor_B_Edge_Corner"
+_surfaces = [{
+"aabb": AABB(-0.144, -0.27, -0.144, 0.288, 0.401326, 0.288),
+"attribute_data": PackedByteArray("WHJuAFhybgBYcm4L+oNuAFhybgD6g24LWHJuC1hybgtYcm4A+oNuCzJ9bgD6g24AWHJuCzJ9bgBYcm4A+oNuC1hybgv6g24AWHJuADJ9bgtYcm4L+oNuADJ9bgv6g24L"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
+"material": ExtResource("1_8bh8i"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP////9U1QAA/////1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//wAA//8AAP//AABU1QAA//8AAFTV//8AAP///7///wAA////v///AAD//1TV/////////7////////9U1f///////1TV//8AAAAA/////wAAAAD/v///AAAAAFTV/////wAA////////AABU1f////8AAFTV/////wAA/39U1VTV/////1TVqipU1VTV/7//vwAA/39U1VTV/7//v1TVqipU1VTV/////wAA/3+qKqoq/////1TVqiqqKqoq/7//vwAA/3+qKqoq/7//v1TVqiqqKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ctctl")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_r4v33"]
+data = PackedVector3Array(-0.144, 0.131326, 0.144, -0.144, -0.27, 0.144, -0.144, -0.27, -0.144, -0.144, 0.131326, -0.144, -0.144, -0.27, -0.144, 0.144, -0.27, -0.144, 0.144, 0.131326, -0.144, 0.144, -0.27, -0.144, 0.144, -0.27, 0.144, 0.144, 0.131326, 0.144, 0.144, -0.27, 0.144, -0.144, -0.27, 0.144, 0.144, -0.27, -0.144, -0.144, -0.27, -0.144, -0.144, -0.27, 0.144, -0.144, 0.131326, -0.144, 0.144, 0.131326, -0.144, 0.144, 0.131326, 0.144, -0.144, 0.131326, 0.144, -0.144, -0.27, -0.144, -0.144, 0.131326, -0.144, -0.144, 0.131326, -0.144, 0.144, -0.27, -0.144, 0.144, 0.131326, -0.144, 0.144, 0.131326, -0.144, 0.144, -0.27, 0.144, 0.144, 0.131326, 0.144, 0.144, 0.131326, 0.144, -0.144, -0.27, 0.144, -0.144, 0.131326, 0.144, 0.144, -0.27, -0.144, -0.144, -0.27, 0.144, 0.144, -0.27, 0.144, -0.144, 0.131326, -0.144, 0.144, 0.131326, 0.144, -0.144, 0.131326, 0.144)
+
+[node name="Floor_B_Edge_Corner" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_ih610")
+skeleton = NodePath("")
+
+[node name="Floor_B_Edge_Corner" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_B_Edge_Corner"]
+shape = SubResource("ConcavePolygonShape3D_r4v33")

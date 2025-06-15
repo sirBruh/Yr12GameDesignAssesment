@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://dh1ap8a1k3ivx"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_8hiik"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n177v"]
+_surfaces = [{
+"aabb": AABB(-1, -2.18557e-08, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("CAAGAAMACAAEAAYAAgAFAAEAAgADAAUABwADAAIABwAIAAMAAwAAAAUAAwAGAAAA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//wAAAAAAAP//XwD/fwAA/39fAP9/AAAAAL4A//8AAP9/AAAAAAAAAABfAP9/AAD//74A//8AAP9/vgD//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5ekqw"]
+resource_name = "ModularBrickStructures_Floor_A_2x2"
+_surfaces = [{
+"aabb": AABB(-1, -2.18557e-08, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray("AADKsgAAYBhUVWAYVFWVZamqyrIAAJVlVFXKsqmqYBipqpVl"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("CAAGAAMACAAEAAYAAgAFAAEAAgADAAUABwADAAIABwAIAAMAAwAAAAUAAwAGAAAA"),
+"material": ExtResource("1_8hiik"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("AAAAAAAAVNX//wAAAABU1f//XwD/f1TV/39fAP9/VNUAAL4A//9U1f9/AAAAAFTVAABfAP9/VNX//74A//9U1f9/vgD//1TVqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n177v")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_v2lsb"]
+data = PackedVector3Array(1, -2.18557e-08, -1, 1, 7.28523e-09, 1, -1, 7.28523e-09, 1, 1, -2.18557e-08, -1, -1, 7.28523e-09, 1, -1, -2.18557e-08, -1)
+
+[node name="Floor_A_2x2" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_5ekqw")
+skeleton = NodePath("")
+
+[node name="Floor_A_2x2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_A_2x2"]
+shape = SubResource("ConcavePolygonShape3D_v2lsb")

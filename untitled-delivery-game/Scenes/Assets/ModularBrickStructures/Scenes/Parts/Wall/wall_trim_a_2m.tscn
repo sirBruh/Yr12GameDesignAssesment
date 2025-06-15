@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://drcr38spariqm"]
+
+[ext_resource type="Material" uid="uid://cm5bfoasqwgdx" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Wall_A.material" id="1_1r3g4"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tbctu"]
+_surfaces = [{
+"aabb": AABB(-1, -0.300001, -0.0390076, 2, 0.300001, 0.132117),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("BAAAAAMABAABAAAABgAAAAIABgADAAAACAADAAUACAAEAAMABwADAAYABwAFAAMABAAJAAoABAAIAAkACwAKAAkACwAMAAoADAAOAAoADAANAA4AAQAKAA4AAQAEAAoA"),
+"name": "ConcreteWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 15,
+"vertex_data": PackedByteArray("//8AACqXAAD///9/KpcAAP//AAAAAAAA/38AACqXAAD/f/9/KpcAAAAAAAAqlwAA/38AAAAAAAAAAAAAAAAAAAAA/38qlwAAAAD/f///AAD/f/9///8AAAAA/////wAA/3/+////AAD///7///8AAP///3///wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pey2q"]
+resource_name = "ModularBrickStructures_Wall_Trim_A_2m"
+_surfaces = [{
+"aabb": AABB(-1, -0.300001, -0.0390076, 2, 0.300001, 0.132117),
+"attribute_data": PackedByteArray("/39Q4P9//v//f/7//3/+//9/UOD/v1Dg/7////+//v//v/7///9Q4P//////v1Dg//9Q4P////////////9Q4P//UOD/v1Dg/79Q4P//////v////3/+//9/UOD/f1Dg"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("BwAAAAUABwACAAAACwABAAQACwAGAAEADQAFAAkADQAHAAUADAAGAAsADAAKAAYACAAQABIACAAOABAAEwARAA8AEwAUABEAFAAWABEAFAAVABYAAwASABcAAwAIABIA"),
+"material": ExtResource("1_1r3g4"),
+"name": "ConcreteWall_1",
+"primitive": 3,
+"uv_scale": Vector4(1.33333, 0.286774, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AACqX/////wAAKpf//////38ql///////fyqXAAD//wAAAAD///9/AAAql////38AACqX////f/9/Kpf///9//38qlwAAAAAAACqX//8AAAAAKpf///9/AAAAAP//AAAAAAAA//8AAP9/Kpf//wAA/38qlwAAAAD/f/////8AAP9///8AAP9//3///////3//f///AAAAAP////////9//v/////////+//////////9//////////3///wAA/3//f/9//z//f/9//3//P/9//z//f/9//3//P/9//3//f/8//3//f/9//z//f/8//3//P/9//3//f/8//3//f/9//z//f/9//3//P/9//3//f/9//3//f/9//3//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tbctu")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a3h7s"]
+data = PackedVector3Array(0.999999, -0.150001, 0.0931095, 0.999999, -0.150001, 0.0390076, -1, -0.15, 0.0390076, -1, -0.15, 0.0390076, 0.999999, -0.150001, 0.0390076, 0.999999, -0.300001, 0.0390076, 0.999999, -0.300001, -0.0390076, -1, -0.3, 0.0390076, 0.999999, -0.300001, 0.0390076, 0.999999, -0.150001, 0.0931095, -1, 6.16684e-08, 0.0931095, 0.999999, -5.90015e-07, 0.0931095, 0.999999, -0.150001, 0.0931095, -1, -0.15, 0.0390076, -1, -0.15, 0.0931095, 0.999999, -0.300001, -0.0390076, -1, -0.3, -0.0390076, -1, -0.3, 0.0390076, -1, -0.15, 0.0390076, 0.999999, -0.300001, 0.0390076, -1, -0.3, 0.0390076, 0.999999, -0.150001, 0.0931095, -1, -0.15, 0.0931095, -1, 6.16684e-08, 0.0931095)
+
+[node name="Wall_Trim_A_2m" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_pey2q")
+skeleton = NodePath("")
+
+[node name="Wall_Trim_A_2m" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Trim_A_2m"]
+shape = SubResource("ConcavePolygonShape3D_a3h7s")

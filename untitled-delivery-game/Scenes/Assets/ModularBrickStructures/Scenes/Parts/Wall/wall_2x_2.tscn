@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://btch0j3t6v6i8"]
+
+[ext_resource type="Material" uid="uid://ef5c8g854sbc" path="res://Scenes/Assets/ModularBrickStructures/Materials/Bricks_A.material" id="1_crrlp"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kkkcb"]
+_surfaces = [{
+"aabb": AABB(-0.999997, 0, -4.37114e-08, 2, 2, 1e-05),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("BwAAAAIABwADAAAABQACAAEABQAHAAIABgAHAAUABgAIAAcACAADAAcACAAEAAMA"),
+"name": "BrickWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("HACAPwAAAAAuvTuzyP9/vwAAAAAuvTuzAABeNgAAAAAuvTuzHACAPwAAgD8M4aayHACAP////z8M4aYxyP9/vwAAgD8M4aayyP9/v////z8M4aYxAABeNgAAgD8M4aayAABeNv///z8M4aYx")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3hl48"]
+resource_name = "ModularBrickStructures_Wall_2x2"
+_surfaces = [{
+"aabb": AABB(-0.999997, 0, -4.37114e-08, 2, 2, 1e-05),
+"attribute_data": PackedByteArray("AACAPwAAgD+rqqo+AACAP6uqKj8AAIA/AACAPwDnNj8AAIA/ApzbPqqqqj4A5zY/qqqqPgKc2z6qqio/AOc2P6qqKj8CnNs+"),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("BwAAAAIABwADAAAABQACAAEABQAHAAIABgAHAAUABgAIAAcACAADAAcACAAEAAMA"),
+"material": ExtResource("1_crrlp"),
+"name": "BrickWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("HACAPwAAAAAuvTuzyP9/vwAAAAAuvTuzAABeNgAAAAAuvTuzHACAPwAAgD8M4aayHACAP////z8M4aYxyP9/vwAAgD8M4aayyP9/v////z8M4aYxAABeNgAAgD8M4aayAABeNv///z8M4aYx/3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_kkkcb")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mk25y"]
+data = PackedVector3Array(1, 2, 4.85682e-09, -0.999997, 0, -4.37114e-08, -0.999997, 2, 4.85682e-09, 1, 2, 4.85682e-09, 1, 0, -4.37114e-08, -0.999997, 0, -4.37114e-08)
+
+[node name="Wall_2x2" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_3hl48")
+skeleton = NodePath("")
+
+[node name="Wall_2x2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_2x2"]
+shape = SubResource("ConcavePolygonShape3D_mk25y")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://tcwqptutgsqs"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_cpy0r"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f4e5c"]
+_surfaces = [{
+"aabb": AABB(-1.19209e-07, -0.11721, -0.1125, 0.0694503, 0.35873, 0.225),
+"format": 34896613377,
+"index_count": 33,
+"index_data": PackedByteArray("AAADAAIAAwAJAAEAAwAAAAkABwACAAMABwAIAAIABgADAAEABgAHAAMABQAJAAAABQAEAAkACAAAAAIACAAFAAAA"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("///g+AAAAAD//wAA//8AAP//////fwAA///g+P//AAAAAAAAAAAAAAAA4PgAAAAAAAAAAP//AAAAAOD4//8AAAAA////fwAA/v8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p3dx0"]
+resource_name = "ModularBrickStructures_Roof_Ridge_End_B"
+_surfaces = [{
+"aabb": AABB(-1.19209e-07, -0.11721, -0.1125, 0.0694503, 0.35873, 0.225),
+"attribute_data": PackedByteArray("/Xxtnf18bZ3+/1Tm/Xz//xr14IP9fLbO/Xy2zoz6VOb9fG2d/XxtnRr1VOb/f/7//39tnf9/bZ3/f/7//39tnf9/bZ3/f7bO/Xz+////4YM="),
+"format": 34896613399,
+"index_count": 33,
+"index_data": PackedByteArray("AgAKAAcACgATAAQACgACABMAEAAFAAkAEAARAAUADgAIAAMADgAPAAgADAASAAAADAALABIAEQABAAYAEQANAAEA"),
+"material": ExtResource("1_cpy0r"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(1.97089, 0.0774866, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("///g+AAA/////+D4AAAAAP//4PgAAP8///8AAP//AAD//wAA////P///////f/////////9/AAD//////39U1f//4Pj//wAA///g+P///////+D4////PwAAAAAAAP//AADg+AAA//8AAOD4AAAAAAAAAAD//wAAAADg+P//AAAAAOD4/////wAA////fwAA/v8AAAAA///+/wAAAAD/P/9/////f9TC/38AAP9//3//fwAA/3//v/9//7+qKqoq/3//f/9/Kr3/fwAA/3////9/////f9TC/3//f/9//3//fyq9/3//v/9/////fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_f4e5c")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lxr53"]
+data = PackedVector3Array(0.0694502, -0.11721, 0.1125, 0.0694502, 0.231541, 0.1125, 0.0694502, 0.231541, -0.1125, 0.0694502, -0.11721, 0.1125, 0.0694502, 0.231541, -0.1125, 0.0694498, -0.11721, -0.1125, 0.0694502, -0.11721, 0.1125, -1.19209e-07, -0.11721, 0.1125, -1.19209e-07, 0.231541, 0.1125, 0.0694502, 0.231541, -0.1125, -1.19209e-07, 0.231541, -0.1125, -1.19209e-07, -0.11721, -0.1125, 0.0694502, -0.11721, 0.1125, -1.19209e-07, 0.231541, 0.1125, 0.0694502, 0.231541, 0.1125, 0.0694502, 0.231541, -0.1125, 0.0694502, 0.231541, 0.1125, -1.19209e-07, 0.231541, 0.1125, 0.0694502, 0.231541, -0.1125, -1.19209e-07, -0.11721, -0.1125, 0.0694498, -0.11721, -0.1125, 0.0694502, 0.231541, -0.1125, -1.19209e-07, 0.231541, 0.1125, -1.19209e-07, 0.231541, -0.1125)
+
+[node name="Roof_Ridge_End_B" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_p3dx0")
+skeleton = NodePath("")
+
+[node name="Roof_Ridge_End_B" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_Ridge_End_B"]
+shape = SubResource("ConcavePolygonShape3D_lxr53")

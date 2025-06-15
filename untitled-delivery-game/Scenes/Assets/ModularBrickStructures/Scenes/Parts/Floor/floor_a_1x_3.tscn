@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://30opntfojiv1"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_82bbg"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cvab0"]
+_surfaces = [{
+"aabb": AABB(-1.5, -2.18558e-08, -0.500001, 3, 1e-05, 1),
+"format": 34896613377,
+"index_count": 18,
+"index_data": PackedByteArray("AwAAAAEAAwACAAAABAABAAUABAADAAEABgAFAAcABgAEAAUA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAABVVQAAAAAAAAAAXwD//wAAVVVfAP//AACqql8A//8AAKqqAAAAAAAA//9fAP//AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5jx2d"]
+resource_name = "ModularBrickStructures_Floor_A_1x3"
+_surfaces = [{
+"aabb": AABB(-1.5, -2.18558e-08, -0.500001, 3, 1e-05, 1),
+"attribute_data": PackedByteArray("AADKslRVyrIAAP//VFX//6mq//+pqsqy///+////yrI="),
+"format": 34896613399,
+"index_count": 18,
+"index_data": PackedByteArray("AwAAAAEAAwACAAAABAABAAUABAADAAEABgAFAAcABgAEAAUA"),
+"material": ExtResource("1_82bbg"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAA/79VVQAAAAD/vwAAXwD///+/VVVfAP///7+qql8A////v6qqAAAAAP+///9fAP///7///wAAAAD/v////3////9/////f////3////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cvab0")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_os78r"]
+data = PackedVector3Array(1.5, -2.18558e-08, -0.500001, -1.5, -7.28533e-09, 0.499999, -1.5, -2.18558e-08, -0.500001, 1.5, -2.18558e-08, -0.500001, 1.5, -7.28533e-09, 0.499999, -1.5, -7.28533e-09, 0.499999)
+
+[node name="Floor_A_1x3" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_5jx2d")
+skeleton = NodePath("")
+
+[node name="Floor_A_1x3" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_A_1x3"]
+shape = SubResource("ConcavePolygonShape3D_os78r")

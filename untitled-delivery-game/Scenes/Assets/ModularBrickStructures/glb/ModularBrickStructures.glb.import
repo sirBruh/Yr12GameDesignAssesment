@@ -1,0 +1,64 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://wx8185ala4xw"
+path="res://.godot/imported/ModularBrickStructures.glb-e420068bc9c2c38cf1e7c6985f25fcfe.scn"
+
+[deps]
+
+source_file="res://Scenes/Assets/ModularBrickStructures/glb/ModularBrickStructures.glb"
+dest_files=["res://.godot/imported/ModularBrickStructures.glb-e420068bc9c2c38cf1e7c6985f25fcfe.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"BrickWall_1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/LoafbrrAssets/ModularBrickStructures/Materials/Bricks_A.material"
+},
+"ConcreteFloor": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/LoafbrrAssets/ModularBrickStructures/Materials/Concrete_Floor_A.material"
+},
+"ConcreteWall_1": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/LoafbrrAssets/ModularBrickStructures/Materials/Concrete_Wall_A.material"
+},
+"DoorAtlas": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/LoafbrrAssets/ModularBrickStructures/Materials/Door_Atlas_B.material"
+},
+"MiscTrim": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/LoafbrrAssets/ModularBrickStructures/Materials/MiscTrim_A.material"
+},
+"Roof": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/LoafbrrAssets/ModularBrickStructures/Materials/Roof_A.material"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

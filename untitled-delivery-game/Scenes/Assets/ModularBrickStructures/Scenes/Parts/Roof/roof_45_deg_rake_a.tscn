@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://b40s8v0fmnjon"]
+
+[ext_resource type="Material" uid="uid://cmyyp8sva8u61" path="res://Scenes/Assets/ModularBrickStructures/Materials/Roof_A.material" id="1_j7rx7"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o51mh"]
+_surfaces = [{
+"aabb": AABB(-0.119767, -0.14462, -3, 0.119767, 3.36898, 3),
+"format": 34896613377,
+"index_count": 90,
+"index_data": PackedByteArray("EAAEABEAEAAHAAQAEgAGABMAEgAFAAYAEwAHABAAEwAGAAcACwAMAA8ACwAIAAwACQAOAA0ACQAKAA4ACgAPAA4ACgALAA8AAwAKAAIAAwALAAoAAgAJAAEAAgAKAAkAAAALAAMAAAAIAAsABgAPAAcABgAOAA8ABQAOAAYABQANAA4ABwAMAAQABwAPAAwAAgAQAAMAAgATABAAAQATAAIAAQASABMAAwARAAAAAwAQABEA"),
+"lods": [0.0338116, PackedByteArray("AwAEABEAAwARAAAAAwAGAAQAAQAGAAMAAQASAAYAEgAFAAYACwAMAA4ACwAIAAwACQALAA4ACQAOAA0AAwAJAAEAAwALAAkAAAALAAMAAAAIAAsABQAOAAYABQANAA4ABgAOAAwABgAMAAQA")],
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("+zMAAP//AAD7M/XjAAAAAPsz+JdVVQAA+zP8S6qqAAD7Mwkc//8AAPsz//8AAAAA+zMCtFVVAAD7MwZoqqoAAP7/AAD//wAA///14wAAAAD+//iXVVUAAP7//EuqqgAA/v8JHP//AAD/////AAAAAP7/ArRVVQAA/v8GaKqqAAAAAAFaqqoAAAAABA7//wAAAAD68QAAAAAAAP2lVVUAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0smuy"]
+resource_name = "ModularBrickStructures_Roof_45deg_Rake_A"
+_surfaces = [{
+"aabb": AABB(-0.119767, -0.14462, -3, 0.119767, 3.36898, 3),
+"attribute_data": PackedByteArray("//+hAAAAoQAAAKEA//+hAFVVoQCpqqEAqqqhAFRVoQD//6EAAACRCwAAoQD//5ELVVWhAKmqkQuqqqEAVFWRC///kQv//6EAAACRCwAAoQBVVZELVVWhAKqqkQuqqqEA//+RC///kQsAAJELAACRC1VVkQtVVZELqqqRC6qqkQtUVRkGAAAZBv//GQapqhkG"),
+"format": 34896613399,
+"index_count": 90,
+"index_data": PackedByteArray("IAAJACEAIAAPAAkAIgANACMAIgALAA0AIwAPACAAIwANAA8AFwAZAB8AFwARABkAEwAdABsAEwAVAB0AFQAfAB0AFQAXAB8ABgAUAAQABgAWABQABAASAAIABAAUABIAAAAWAAYAAAAQABYADAAeAA4ADAAcAB4ACgAcAAwACgAaABwADgAYAAgADgAeABgABQAgAAcABQAjACAAAwAjAAUAAwAiACMABwAhAAEABwAgACEA"),
+"lods": [0.0338116, PackedByteArray("BwAJACEABwAhAAEABwANAAkAAwANAAcAAwAiAA0AIgALAA0AFwAZAB0AFwARABkAEwAXAB0AEwAdABsABgASAAIABgAWABIAAAAWAAYAAAAQABYACgAcAAwACgAaABwADAAcABgADAAYAAgA")],
+"material": ExtResource("1_j7rx7"),
+"name": "Roof",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("+zMAAP//qun7MwAA///P7vsz9eMAAKrp+zP14wAAz+77M/iXVVWq6fsz+JdVVc/u+zP8S6qqqun7M/xLqqrP7vszCRz//wI6+zMJHP//oeT7M///AAACOvsz//8AAKHk+zMCtFVVAjr7MwK0VVWh5PszBmiqqgI6+zMGaKqqoeT+/wAA//+q6f7/AAD//6rp///14wAAqun///XjAACq6f7/+JdVVarp/v/4l1VVqun+//xLqqqq6f7//Euqqqrp/v8JHP//Ajr+/wkc//+q6f////8AAAI6/////wAAqun+/wK0VVUCOv7/ArRVVarp/v8GaKqqAjr+/wZoqqqq6QAAAVqqqqrpAAAEDv//OOwAAPrxAAAj5wAA/aVVVarpBDX6yiDm+soENfrKIOb6ygQ1+sog5vrKBDX6yiDm+sr+nP6cQe76yv6c/pxB7vrK/pz+nEHu+sr+nP6cQe76ygQ1+soEtQlqBDX6ygS1CWoENfrKBLUJagQ1+soEtQlq/pz+nAS1CWr+nP6cBLUJav6c/pwEtQlq/pz+nAS1CWoI6vrKDej6yhjs+soI6vrK")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_o51mh")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0gx2o"]
+data = PackedVector3Array(-0.0954472, 0.224357, -4.17213e-09, -0.0954472, 2.85538, -3, -0.0954472, 3.22436, -3, 3.64262e-08, 2.85538, -3, -0.0954472, -0.14462, -4.17213e-09, -2.18557e-08, -0.14462, -9.55342e-16, -0.0954472, 0.224357, -4.17213e-09, 3.64262e-08, 3.22436, -3, -2.18557e-08, 0.224357, -9.55342e-16, -2.18557e-08, 0.224357, -9.55342e-16, 3.64262e-08, 2.85538, -3, -2.18557e-08, -0.14462, -9.55342e-16, 3.64262e-08, 2.85538, -3, -0.0954472, 2.85538, -3, -0.0954472, -0.14462, -4.17213e-09, -0.0954472, 0.224357, -4.17213e-09, -0.0954472, 3.22436, -3, 3.64262e-08, 3.22436, -3, -2.18557e-08, 0.224357, -9.55342e-16, 3.64262e-08, 3.22436, -3, 3.64262e-08, 2.85538, -3, -0.0954472, 0.224357, -4.17213e-09, -0.0954472, -0.14462, -4.17213e-09, -0.0954472, 2.85538, -3)
+
+[node name="Roof_45deg_Rake_A" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_0smuy")
+skeleton = NodePath("")
+
+[node name="Roof_45deg_Rake_A" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_45deg_Rake_A"]
+shape = SubResource("ConcavePolygonShape3D_0gx2o")

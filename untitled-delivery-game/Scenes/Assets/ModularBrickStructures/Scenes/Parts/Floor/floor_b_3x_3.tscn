@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=4 uid="uid://tjq13ec2wsen"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_qeo0s"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3dok1"]
+_surfaces = [{
+"aabb": AABB(-1.5, -0.2, -1.5, 3, 0.2, 3),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("DwANAAcADwAIAA0ADAAEAAMADAAGAAQABgALAAQABgAHAAsACQAIAA8ACQAAAAgABQAPAA4ABQAJAA8AAQAOAAoAAQAFAA4ADgAHAAYADgAPAAcABwACAAsABwANAAIACgAGAAwACgAOAAYAHQAVABYAHQAcABUAEQAUAB4AEQATABQAHgAbABwAHgAUABsAGAAWABcAGAAdABYAGQAdABgAGQAaAB0AEgAaABkAEgAQABoAGgAcAB0AGgAeABwAHAAfABUAHAAbAB8AEAAeABoAEAARAB4A"),
+"lods": [1.67152e-05, PackedByteArray("DAAEAAMACgAEAAwACgAFAAQAAQAFAAoABQANAAQABAANAAsADQACAAsABQAJAA0ACQAIAA0ACQAAAAgAEQATABQAEQAUABsAEQAbABUAFQAbAB8AEAARABUAEAAVABYAGQAQABYAEgAQABkAGQAWABgAGAAWABcA")],
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AAD/////AAD///////8AAAAA/v8AAAAA///+/wAAAACqqv7/AAAAAKqq/////wAAqqr+/1VVAABVVf7/VVUAAAAA/v+qqgAAVVX/////AAD///7/qqoAAFVV/v8AAAAA///+/1VVAAAAAP7/VVUAAKqq/v+qqgAAVVX+/6qqAAD//wAAqqoAAP//AABVVQAA//8AAP//AAD//wAAAAAAAKqqAAAAAAAAAAAAAFVVAAAAAAAAqqoAAAAAAAD//wAAVVUAAP//AACqqgAA//8AAKqqAACqqgAAVVUAAAAAAABVVQAAVVUAAFVVAACqqgAAqqoAAFVVAAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qs0tb"]
+resource_name = "ModularBrickStructures_Floor_B_3x3"
+_surfaces = [{
+"aabb": AABB(-1.5, -0.2, -1.5, 3, 0.2, 3),
+"attribute_data": PackedByteArray("////////YBgAAP//AABgGAAAlWX//5VlVVWVZVVVyrKqqv/////KsqmqYBgAAMqyVFVgGFVV//+qqpVlqqrKsqmqYBhUVWAY//9gGAAAYBgAAJVlVVX//6qq///////////Ksv//lWWqqpVlAADKslVVyrKqqsqyVVWVZQAA//8="),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("DwANAAcADwAIAA0ADAAEAAMADAAGAAQABgALAAQABgAHAAsACQAIAA8ACQAAAAgABQAPAA4ABQAJAA8AAQAOAAoAAQAFAA4ADgAHAAYADgAPAAcABwACAAsABwANAAIACgAGAAwACgAOAAYAHQAVABYAHQAcABUAEQAUAB4AEQATABQAHgAbABwAHgAUABsAGAAWABcAGAAdABYAGQAdABgAGQAaAB0AEgAaABkAEgAQABoAGgAcAB0AGgAeABwAHAAfABUAHAAbAB8AEAAeABoAEAARAB4A"),
+"lods": [1.67152e-05, PackedByteArray("DAAEAAMACgAEAAwACgAFAAQAAQAFAAoABQANAAQABAANAAsADQACAAsABQAJAA0ACQAIAA0ACQAAAAgAEQATABQAEQAUABsAEQAbABUAFQAbAB8AEAARABUAEAAVABYAGQAQABYAEgAQABkAGQAWABgAGAAWABcA")],
+"material": ExtResource("1_qeo0s"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AAD/////VNX///////9U1QAA/v8AAFTV///+/wAAVNWqqv7/AABU1aqq/////1TVqqr+/1VVVNVVVf7/VVVU1QAA/v+qqlTVVVX/////VNX///7/qqpU1VVV/v8AAFTV///+/1VVVNUAAP7/VVVU1aqq/v+qqlTVVVX+/6qqVNX//wAAqqqqKv//AABVVaoq//8AAP//qir//wAAAACqKqqqAAAAAKoqAAAAAFVVqioAAAAAqqqqKgAAAAD//6oqVVUAAP//qiqqqgAA//+qKqqqAACqqqoqVVUAAAAAqipVVQAAVVWqKlVVAACqqqoqqqoAAFVVqioAAAAAAACqKqqqqqqpqqqqqqqqqqqqqqqqqqqqqaqqqqqqqqqqqqqqqqqqqqmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqmqqqqqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3dok1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4n5iv"]
+data = PackedVector3Array(-1.5, -2.18557e-08, -1.5, 1.5, 2.18557e-08, 1.5, -1.5, 2.18557e-08, 1.5, -1.5, -2.18557e-08, -1.5, 1.5, -2.18557e-08, -1.5, 1.5, 2.18557e-08, 1.5, -1.5, -0.2, -1.5, 1.5, -0.2, 1.5, 1.5, -0.2, -1.5, -1.5, -0.2, -1.5, -1.5, -0.2, 1.5, 1.5, -0.2, 1.5)
+
+[node name="Floor_B_3x3" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_qs0tb")
+skeleton = NodePath("")
+
+[node name="Floor_B_3x3" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_B_3x3"]
+shape = SubResource("ConcavePolygonShape3D_4n5iv")

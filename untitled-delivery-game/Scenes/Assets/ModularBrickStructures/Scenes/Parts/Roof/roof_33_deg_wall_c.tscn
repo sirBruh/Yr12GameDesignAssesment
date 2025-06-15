@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://08exsquw5r5l"]
+
+[ext_resource type="Material" uid="uid://ef5c8g854sbc" path="res://Scenes/Assets/ModularBrickStructures/Materials/Bricks_A.material" id="1_rg73l"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a4lt0"]
+_surfaces = [{
+"aabb": AABB(-2.18557e-08, 0, -1.5, 1e-05, 2, 3),
+"format": 34896613377,
+"index_count": 21,
+"index_data": PackedByteArray("CAAAAAIABgAHAAUAAwAFAAQAAwAGAAUABwABAAUAAQAIAAIAAQAHAAgA"),
+"name": "BrickWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("AAAAAP//AAA8AgAAVVUAAB4BAACqqgAAHQL//wAAAAC8Av9/AAAAAJ0B/39VVQAAaAGqqlVVAAAOAf9//38AALQAVVWqqgAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iwf6k"]
+resource_name = "ModularBrickStructures_Roof_33Deg_Wall_C"
+_surfaces = [{
+"aabb": AABB(-2.18557e-08, 0, -1.5, 1e-05, 2, 3),
+"attribute_data": PackedByteArray("/////1VV//+qqv//AADNbQAA5rZUVea2VFWInv9/5rapqkPP"),
+"format": 34896613399,
+"index_count": 21,
+"index_data": PackedByteArray("CAAAAAIABgAHAAUAAwAFAAQAAwAGAAUABwABAAUAAQAIAAIAAQAHAAgA"),
+"material": ExtResource("1_rg73l"),
+"name": "BrickWall_1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 9,
+"vertex_data": PackedByteArray("AAAAAP///788AgAAVVX/vx4BAACqqv+/HQL//wAA/7+8Av9/AAD/v50B/39VVf+/aAGqqlVV/78OAf9//3//v7QAVVWqqv+//3////9/////f////3////9//v//f////3/+//9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_a4lt0")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jy2h6"]
+data = PackedVector3Array(6.07103e-08, 2, -1.5, 4.1283e-08, 1, -0.5, 8.49944e-08, 1, -1.5, 4.1283e-08, 1, -0.5, 6.07103e-08, 2, -1.5, -2.18557e-08, 0, 1.5, 4.1283e-08, 1, -0.5, -2.18557e-08, 0, 1.5, 6.55671e-08, 0, -0.5)
+
+[node name="Roof_33Deg_Wall_C" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_iwf6k")
+skeleton = NodePath("")
+
+[node name="Roof_33Deg_Wall_C" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Roof_33Deg_Wall_C"]
+shape = SubResource("ConcavePolygonShape3D_jy2h6")

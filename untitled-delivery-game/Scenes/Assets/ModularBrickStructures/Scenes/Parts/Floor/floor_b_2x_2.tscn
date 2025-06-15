@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=4 uid="uid://cqoncp88dbbh"]
+
+[ext_resource type="Material" uid="uid://cju61vribp7uy" path="res://Scenes/Assets/ModularBrickStructures/Materials/Concrete_Floor_A.material" id="1_2f3jq"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_70iyi"]
+_surfaces = [{
+"aabb": AABB(-1, -0.2, -1, 2, 0.2, 2),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("CAAGAAMACAAEAAYAAgAFAAEAAgADAAUABwADAAIABwAIAAMAAwAAAAUAAwAGAAAADwAJAAoADwANAAkAEAAMAA0AEAALAAwADgANAA8ADgAQAA0ADQARAAkADQAMABEA"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAD+/wAAAAD///7/AAAAAP//////fwAA/3////9/AAAAAP////8AAP9//v8AAAAAAAD///9/AAD///////8AAP9//////wAAAAAAAP9/AAAAAAAA//8AAP//AAAAAAAA/38AAAAAAAD/fwAA/38AAP//AAD//wAA/38AAP//AAD//wAA/38AAAAAAAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ydnwl"]
+resource_name = "ModularBrickStructures_Floor_B_2x2"
+_surfaces = [{
+"aabb": AABB(-1, -0.2, -1, 2, 0.2, 2),
+"attribute_data": PackedByteArray("AADKsgAAYBhUVWAYVFWVZamqyrIAAJVlVFXKsqmqYBipqpVlVFXKsqmqyrIAAGAYAACVZVRVlWWpqmAYqaqVZVRVYBgAAMqy"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("CAAGAAMACAAEAAYAAgAFAAEAAgADAAUABwADAAIABwAIAAMAAwAAAAUAAwAGAAAADwAJAAoADwANAAkAEAAMAA0AEAALAAwADgANAA8ADgAQAA0ADQARAAkADQAMABEA"),
+"material": ExtResource("1_2f3jq"),
+"name": "ConcreteFloor",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAD+/wAAVNX///7/AABU1f//////f1TV/3////9/VNUAAP////9U1f9//v8AAFTVAAD///9/VNX///////9U1f9//////1TVAAAAAP9/qioAAAAA//+qKv//AAAAAKoq/38AAAAAqir/fwAA/3+qKv//AAD//6oq/38AAP//qir//wAA/3+qKgAAAAAAAKoqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_70iyi")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3u64p"]
+data = PackedVector3Array(1, -2.18557e-08, -1, 1, 7.28523e-09, 1, -1, 7.28523e-09, 1, -1, -0.2, 1, 1, -0.2, -1, -1, -0.2, -1, 1, -2.18557e-08, -1, -1, 7.28523e-09, 1, -1, -2.18557e-08, -1, -1, -0.2, 1, 1, -0.2, 1, 1, -0.2, -1)
+
+[node name="Floor_B_2x2" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_ydnwl")
+skeleton = NodePath("")
+
+[node name="Floor_B_2x2" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor_B_2x2"]
+shape = SubResource("ConcavePolygonShape3D_3u64p")
