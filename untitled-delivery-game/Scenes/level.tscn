@@ -1,21 +1,22 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhsmpmawybsuh"]
+[gd_scene load_steps=21 format=3 uid="uid://bhsmpmawybsuh"]
 
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://c77hgmo5456tm" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_a_grp.tscn" id="2_crh0w"]
 [ext_resource type="PackedScene" uid="uid://c3rf8nfef33y2" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_b_grp.tscn" id="3_c7le1"]
-[ext_resource type="PackedScene" uid="uid://celsj6ooe7y52" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_c_grp.tscn" id="4_2klc5"]
 [ext_resource type="PackedScene" uid="uid://qwtlg3xgu4tg" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_d_grp.tscn" id="5_nngtn"]
-[ext_resource type="PackedScene" uid="uid://c3i41ys80cll5" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_e_grp.tscn" id="6_vofx3"]
-[ext_resource type="PackedScene" uid="uid://dm6db3pf071um" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_f_grp.tscn" id="7_00k4y"]
 [ext_resource type="PackedScene" uid="uid://b43rb07lpqdo6" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_g_grp.tscn" id="8_3a44l"]
 [ext_resource type="PackedScene" uid="uid://cmji48srutucy" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_h_grp.tscn" id="9_0cmrb"]
 [ext_resource type="PackedScene" uid="uid://btt2dmk6ckcys" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_i_grp.tscn" id="10_pnhnk"]
 [ext_resource type="PackedScene" uid="uid://bfa3d1187i8pp" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_j_grp.tscn" id="11_24uko"]
 [ext_resource type="PackedScene" uid="uid://c6kkbw5y45ohf" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_k_grp.tscn" id="12_gf56v"]
-[ext_resource type="PackedScene" uid="uid://c5j0q7cojdw2n" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_l_grp.tscn" id="13_6y3s5"]
 [ext_resource type="PackedScene" uid="uid://bxmxekcbfyfg3" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_m_grp.tscn" id="14_c7le1"]
 [ext_resource type="PackedScene" uid="uid://pqibm7y8svbd" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_o_grp.tscn" id="14_u0did"]
 [ext_resource type="PackedScene" uid="uid://c3jbgvltick6n" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_n_grp.tscn" id="15_2klc5"]
+[ext_resource type="PackedScene" uid="uid://dnqfhwyhkchgr" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_s_grp.tscn" id="16_nngtn"]
+[ext_resource type="PackedScene" uid="uid://crp5sfnbhaesl" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_p_grp.tscn" id="17_0cmrb"]
+[ext_resource type="PackedScene" uid="uid://bfqeape65hnri" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_q_grp.tscn" id="18_pnhnk"]
+[ext_resource type="PackedScene" uid="uid://cnas2apq7fk72" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_r_grp.tscn" id="19_24uko"]
+[ext_resource type="PackedScene" uid="uid://24jjcdlg8tya" path="res://Scenes/Assets/Nature/Free_Forest_Kit_AssetQuest/Meshes/Birch_Tree_1.fbx" id="21_6y3s5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tumq0"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -52,47 +53,52 @@ collision_layer = 2
 collision_mask = 2
 size = Vector3(12.9, 0.1, 30)
 
-[node name="Build_A_Grp" parent="Environment" instance=ExtResource("2_crh0w")]
+[node name="Houses" type="Node3D" parent="Environment"]
+
+[node name="Build_A_Grp" parent="Environment/Houses" instance=ExtResource("2_crh0w")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.6, 0, -32.5)
 
-[node name="Build_B_Grp" parent="Environment" instance=ExtResource("3_c7le1")]
+[node name="Build_B_Grp" parent="Environment/Houses" instance=ExtResource("3_c7le1")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.6, 0, -33.4)
 
-[node name="Build_C_Grp" parent="Environment" instance=ExtResource("4_2klc5")]
-transform = Transform3D(-0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, -0.34202, 2, 0, -20.2)
-
-[node name="Build_D_Grp" parent="Environment" instance=ExtResource("5_nngtn")]
+[node name="Build_D_Grp" parent="Environment/Houses" instance=ExtResource("5_nngtn")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -4.2, 0, -30)
 
-[node name="Build_E_Grp" parent="Environment" instance=ExtResource("6_vofx3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.7, 0, -56.8)
-
-[node name="Build_F_Grp" parent="Environment" instance=ExtResource("7_00k4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3, 0, -57.8)
-
-[node name="Build_G_Grp" parent="Environment" instance=ExtResource("8_3a44l")]
+[node name="Build_G_Grp" parent="Environment/Houses" instance=ExtResource("8_3a44l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -57.4)
 
-[node name="Build_H_Grp" parent="Environment" instance=ExtResource("9_0cmrb")]
+[node name="Build_H_Grp" parent="Environment/Houses" instance=ExtResource("9_0cmrb")]
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, -50, 0, -33.5)
 
-[node name="Build_I_Grp" parent="Environment" instance=ExtResource("10_pnhnk")]
+[node name="Build_I_Grp" parent="Environment/Houses" instance=ExtResource("10_pnhnk")]
 transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, -34.8, 0, -32.3)
 
-[node name="Build_J_Grp" parent="Environment" instance=ExtResource("11_24uko")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 46.9, 0, -55.6)
+[node name="Build_J_Grp" parent="Environment/Houses" instance=ExtResource("11_24uko")]
+transform = Transform3D(0.426095, 0, -0.904678, 0, 1, 0, 0.904678, 0, 0.426095, 41.6, 0, -51.6)
 
-[node name="Build_K_Grp" parent="Environment" instance=ExtResource("12_gf56v")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.2, 0, -36.3)
+[node name="Build_K_Grp" parent="Environment/Houses" instance=ExtResource("12_gf56v")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.2, 0, -35.3)
 
-[node name="Build_L_Grp" parent="Environment" instance=ExtResource("13_6y3s5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9, 0, -10.8)
-
-[node name="Build_M_Grp" parent="Environment" instance=ExtResource("14_c7le1")]
+[node name="Build_M_Grp" parent="Environment/Houses" instance=ExtResource("14_c7le1")]
 transform = Transform3D(-1.1, 0, 0, 0, 1, 0, 0, 0, 1.1, -27.5, 0, -15.1)
 
-[node name="Build_N_Grp" parent="Environment" instance=ExtResource("15_2klc5")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 46.5, 0, -23.8)
+[node name="Build_N_Grp" parent="Environment/Houses" instance=ExtResource("15_2klc5")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 46.5, 0, -21.8)
 
-[node name="Build_O_Grp" parent="Environment" instance=ExtResource("14_u0did")]
+[node name="Build_O_Grp" parent="Environment/Houses" instance=ExtResource("14_u0did")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -45.5, 0, -57.6)
+
+[node name="Build_P_Grp" parent="Environment/Houses" instance=ExtResource("17_0cmrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9, 0, -57.8)
+
+[node name="Build_Q_Grp" parent="Environment/Houses" instance=ExtResource("18_pnhnk")]
+transform = Transform3D(-0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, -0.34202, 31.1, 0, -57.5)
+
+[node name="Build_R_Grp" parent="Environment/Houses" instance=ExtResource("19_24uko")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44, 0, -12.6)
+
+[node name="Build_S_Grp" parent="Environment/Houses" instance=ExtResource("16_nngtn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9, 0, -19)
+
+[node name="Birch_Tree_1" parent="Environment" instance=ExtResource("21_6y3s5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -19.9)
