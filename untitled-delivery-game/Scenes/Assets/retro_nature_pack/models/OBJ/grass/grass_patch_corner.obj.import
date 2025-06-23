@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://71pydd7sdhwi"
+path="res://.godot/imported/grass_patch_corner.obj-07f83fdd39e27019e42574474e563815.mesh"
+
+[deps]
+
+files=["res://.godot/imported/grass_patch_corner.obj-07f83fdd39e27019e42574474e563815.mesh"]
+
+source_file="res://Scenes/Assets/retro_nature_pack/models/OBJ/grass/grass_patch_corner.obj"
+dest_files=["res://.godot/imported/grass_patch_corner.obj-07f83fdd39e27019e42574474e563815.mesh", "res://.godot/imported/grass_patch_corner.obj-07f83fdd39e27019e42574474e563815.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

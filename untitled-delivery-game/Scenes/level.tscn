@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhsmpmawybsuh"]
+[gd_scene load_steps=21 format=3 uid="uid://bhsmpmawybsuh"]
 
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://c77hgmo5456tm" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_a_grp.tscn" id="2_crh0w"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c3jbgvltick6n" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_n_grp.tscn" id="15_2klc5"]
 [ext_resource type="PackedScene" uid="uid://dnqfhwyhkchgr" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_s_grp.tscn" id="16_nngtn"]
 [ext_resource type="PackedScene" uid="uid://crp5sfnbhaesl" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_p_grp.tscn" id="17_0cmrb"]
+[ext_resource type="PackedScene" uid="uid://bmddyccw68kmj" path="res://Scenes/Assets/Nature/Trees/tree_01.tscn" id="17_nngtn"]
 [ext_resource type="PackedScene" uid="uid://bfqeape65hnri" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_q_grp.tscn" id="18_pnhnk"]
 [ext_resource type="PackedScene" uid="uid://cnas2apq7fk72" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_r_grp.tscn" id="19_24uko"]
 
@@ -98,3 +99,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44, 0,
 
 [node name="Build_S_Grp" parent="Environment/Houses" instance=ExtResource("16_nngtn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9, 0, -19)
+
+[node name="Nature" type="Node3D" parent="Environment"]
+
+[node name="Tree01" parent="Environment/Nature" instance=ExtResource("17_nngtn")]
+transform = Transform3D(1.42321, 0, 0, 0, 1.86, 0, 0, 0, 1.35, -4.1, 0, -22)
