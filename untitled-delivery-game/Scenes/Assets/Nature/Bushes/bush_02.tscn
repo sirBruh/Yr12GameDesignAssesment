@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0vp3el2a261n"]
+
+[ext_resource type="ArrayMesh" uid="uid://cqsg1etrkufv4" path="res://Scenes/Assets/retro_nature_pack/models/OBJ/bushes/bush02.obj" id="1_orahs"]
+[ext_resource type="Texture2D" uid="uid://byyjb4n8jbt5c" path="res://Scenes/Assets/retro_nature_pack/textures/bushes/bush2_fall.png" id="2_sx13a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pjp4"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_sx13a")
+
+[node name="Bush02" type="Node3D"]
+
+[node name="Bush02" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_orahs")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pjp4")

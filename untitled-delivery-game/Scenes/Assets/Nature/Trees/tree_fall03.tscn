@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c10g4qbubyoy1"]
+
+[ext_resource type="ArrayMesh" uid="uid://bb2c5q7k32p3" path="res://Scenes/Assets/retro_nature_pack/models/OBJ/trees/tree03.obj" id="1_p4wq3"]
+[ext_resource type="Texture2D" uid="uid://7khvpn3213vt" path="res://Scenes/Assets/retro_nature_pack/textures/trees/tree01_fall.png" id="2_5gwri"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0umfy"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_5gwri")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gwri"]
+albedo_texture = ExtResource("2_5gwri")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yu3dw"]
+radius = 0.152832
+
+[node name="Tree03" type="Node3D"]
+
+[node name="Tree03" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_p4wq3")
+surface_material_override/0 = SubResource("StandardMaterial3D_0umfy")
+surface_material_override/1 = SubResource("StandardMaterial3D_5gwri")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tree03"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree03/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915678, 0)
+shape = SubResource("CylinderShape3D_yu3dw")
