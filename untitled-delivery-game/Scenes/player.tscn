@@ -23,7 +23,7 @@ shape = SubResource("SphereShape3D_v0iea")
 [node name="cam_pivot" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="cam_pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0.7, 0)
 
 [node name="raycast" type="Node3D" parent="."]
 
