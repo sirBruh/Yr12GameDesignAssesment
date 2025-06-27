@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvvox8xy1mx21"]
+
+[ext_resource type="ArrayMesh" uid="uid://6l1ejw7fs2na" path="res://Scenes/Assets/retro_nature_pack/models/OBJ/grass/grass_patch.obj" id="1_kjpia"]
+[ext_resource type="Texture2D" uid="uid://be5ajg5q4ntvj" path="res://Scenes/Assets/retro_nature_pack/textures/grass/grass_patch_fall.png" id="2_p1vkv"]
+
+[sub_resource type="GDScript" id="GDScript_kjpia"]
+script/source = "extends Node3D
+
+var mesh = load(\"res://Scenes/Assets/Nature/Grass/grass_01.tscn\")
+var mesh_instances: Array = []
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	mesh = load(\"res://Scenes/Assets/Nature/Grass/grass_01.tscn\")
+	for i in range (10):
+		var instance = MeshInstance3D.new()
+		instance.mesh = mesh
+		instance.position = Vector3(i * 2, 0, 0)  
+		add_child(instance)
+		mesh_instances.append(instance)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mqlh"]
+transparency = 2
+alpha_scissor_threshold = 0.86
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.745098, 0.807843, 0.627451, 1)
+albedo_texture = ExtResource("2_p1vkv")
+
+[node name="Grass01" type="Node3D"]
+script = SubResource("GDScript_kjpia")
+
+[node name="GrassPatch" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_kjpia")
+surface_material_override/0 = SubResource("StandardMaterial3D_5mqlh")
