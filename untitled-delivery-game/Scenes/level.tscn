@@ -1,7 +1,8 @@
-[gd_scene load_steps=32 format=3 uid="uid://bhsmpmawybsuh"]
+[gd_scene load_steps=34 format=3 uid="uid://bhsmpmawybsuh"]
 
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://c77hgmo5456tm" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_a_grp.tscn" id="2_crh0w"]
+[ext_resource type="Texture2D" uid="uid://3cxjs5b2fabq" path="res://tileable-grass_clover_tt7010116-sample_1.png" id="2_luodc"]
 [ext_resource type="PackedScene" uid="uid://c3rf8nfef33y2" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_b_grp.tscn" id="3_c7le1"]
 [ext_resource type="PackedScene" uid="uid://qwtlg3xgu4tg" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_d_grp.tscn" id="5_nngtn"]
 [ext_resource type="PackedScene" uid="uid://b43rb07lpqdo6" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_g_grp.tscn" id="8_3a44l"]
@@ -41,8 +42,11 @@ sky = SubResource("Sky_k5f4k")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cgv8"]
+albedo_texture = ExtResource("2_luodc")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_t205d"]
-size = Vector3(5.3, 2, 1.3)
+size = Vector3(9.70522, 2, 1.3)
 
 [node name="Main" type="Node3D"]
 
@@ -65,6 +69,7 @@ use_collision = true
 collision_layer = 2
 collision_mask = 2
 size = Vector3(12.9, 0.1, 30)
+material = SubResource("StandardMaterial3D_1cgv8")
 
 [node name="Houses" type="Node3D" parent="Environment"]
 
@@ -444,6 +449,45 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48.3, -0.4, -19.1)
 [node name="Bush70" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("25_1cgv8")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46.9, -0.4, -19.1)
 
+[node name="Bush71" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("22_u0did")]
+transform = Transform3D(1.5187, 0, 0, 0, 1.5187, 0, 0, 0, 1.5187, -49.0404, -0.506367, -43.0303)
+
+[node name="Bush72" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("23_53r2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9273, 0.05, -43.7475)
+
+[node name="Bush73" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("24_luodc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.0933, -0.0221767, -44.293)
+
+[node name="Bush74" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("26_hcs0j")]
+transform = Transform3D(1.61079, 0, 0, 0, 1.04756, 0, 0, 0, 1.61079, -48.9446, 0.0499997, -44.9176)
+
+[node name="Bush75" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("22_u0did")]
+transform = Transform3D(1.6353, 0, 0, 0, 1.48984, 0, 0, 0, 1.6353, -49.014, -0.506267, -45.4822)
+
+[node name="Bush76" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("24_luodc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.274, -0.288186, -46.2981)
+
+[node name="Bush77" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("25_1cgv8")]
+transform = Transform3D(1.46287, 0, 0, 0, 1.46287, 0, 0, 0, 1.46287, -49.0589, -0.399492, -46.8229)
+
+[node name="Bush78" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("26_hcs0j")]
+transform = Transform3D(2.36765, 0, 0, 0, 0.982617, 0, 0, 0, 2.36765, -48.9079, 0.05, -47.3097)
+
+[node name="Bush79" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("22_u0did")]
+transform = Transform3D(1.43407, 0, 0, 0, 1.43407, 0, 0, 0, 1.43407, -48.0016, -0.251965, -49.66)
+
+[node name="Bush80" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("23_53r2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.394, 0.0500002, -49.2245)
+
+[node name="Bush81" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("24_luodc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.9977, 0.05, -48.0005)
+
+[node name="Bush82" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("23_53r2q")]
+transform = Transform3D(1.50663, 0, 0, 0, 1.50663, 0, 0, 0, 1.50663, -48.8284, 0.0500002, -48.7121)
+
+[node name="Bush83" parent="Environment/Nature/Bushes/Fall" instance=ExtResource("25_1cgv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1856, 0.05, -45.8628)
+
 [node name="Collisions" type="Node3D" parent="Environment/Nature/Bushes"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/Nature/Bushes/Collisions"]
@@ -512,7 +556,14 @@ shape = SubResource("BoxShape3D_t205d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Nature/Bushes/Collisions/StaticBody3D10"]
-transform = Transform3D(-0.999999, 0, 7.45058e-09, 0, 1, 0, -7.45058e-08, 0, -0.0999999, -71.0852, 0.599999, -19.0734)
+transform = Transform3D(-0.999999, 0, 7.45058e-09, 0, 1, 0, -7.45058e-08, 0, -0.0999999, -70.923, 0.599999, -19.0734)
+shape = SubResource("BoxShape3D_t205d")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Environment/Nature/Bushes/Collisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Nature/Bushes/Collisions/StaticBody3D11"]
+transform = Transform3D(-0.109613, 0, -0.0993973, 0, 1, 0, 0.993973, 0, -0.0109613, -69.0357, 0.600001, -46.9785)
 shape = SubResource("BoxShape3D_t205d")
 
 [node name="Grass" type="Node3D" parent="Environment/Nature"]
