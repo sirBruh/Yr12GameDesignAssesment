@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4uux505t5ti"]
+
+[ext_resource type="PackedScene" uid="uid://b3qc17hgaxwal" path="res://Scenes/Assets/Barriers pack/Barriers pack/Fbx/Wooden_Fence_006.fbx" id="1_awu2a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uxymw"]
+size = Vector3(0.349365, 5.38623, 8.48636)
+
+[node name="Fence_01" type="Node3D"]
+
+[node name="Wooden_Fence_006" parent="." instance=ExtResource("1_awu2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.45873, 0, -3.39183)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wooden_Fence_006"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wooden_Fence_006/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.335, 1.63792, 3.6173)
+shape = SubResource("BoxShape3D_uxymw")

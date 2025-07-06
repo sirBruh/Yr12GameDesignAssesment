@@ -1,4 +1,12 @@
-[gd_scene format=3 uid="uid://d10kefpoiwe0g"]
+[gd_scene load_steps=5 format=3 uid="uid://d10kefpoiwe0g"]
+
+[ext_resource type="Script" uid="uid://yuo2ix14qc7f" path="res://Scenes/menu.gd" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://cgh1mm2a1jqoj" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayIcon/Default.png" id="1_xhh6f"]
+[ext_resource type="FontFile" uid="uid://dnrwh7nmfvm6x" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/josefin-sans/JosefinSans-Bold.ttf" id="3_cayip"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_158mb"]
+font = ExtResource("3_cayip")
+font_size = 32
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +15,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cayip")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 501.0
+offset_right = 227.0
+offset_bottom = 584.0
+scale = Vector2(1.05396, 0.895262)
+icon = ExtResource("1_xhh6f")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 109.0
+offset_right = 379.0
+offset_bottom = 141.0
+scale = Vector2(1.73075, 1.78383)
+text = "Titled Delivery game"
+label_settings = SubResource("LabelSettings_158mb")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
