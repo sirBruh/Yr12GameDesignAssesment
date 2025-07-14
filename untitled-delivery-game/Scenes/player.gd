@@ -84,6 +84,10 @@ func run_state():
 		speed = 8
 	else:
 		speed = 5
+func _on_above_head_body_entered(_body: Node3D):
+	can_mantle = false
+func _on_above_head_body_exited(_body: Node3D):
+	can_mantle = true
 func check_mantle():
 	var has_ledge = (face_lvl.is_colliding() and not top_head.is_colliding())
 	if can_mantle:
@@ -96,7 +100,3 @@ func check_mantle():
 				
 		else:
 			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-func _on_above_head_body_entered(_body: Node3D):
-	can_mantle = false
-func _on_above_head_body_exited(_body: Node3D):
-	can_mantle = true
