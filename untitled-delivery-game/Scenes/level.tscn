@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://c77hgmo5456tm" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_a_grp.tscn" id="2_crh0w"]
-[ext_resource type="Texture2D" uid="uid://3cxjs5b2fabq" path="res://tileable-grass_clover_tt7010116-sample_1.png" id="2_luodc"]
+[ext_resource type="Texture2D" uid="uid://3cxjs5b2fabq" path="res://Scenes/Assets/Images/tileable-grass_clover_tt7010116-sample_1.png" id="2_luodc"]
 [ext_resource type="PackedScene" uid="uid://c3rf8nfef33y2" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_b_grp.tscn" id="3_c7le1"]
 [ext_resource type="PackedScene" uid="uid://qwtlg3xgu4tg" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_d_grp.tscn" id="5_nngtn"]
 [ext_resource type="PackedScene" uid="uid://b43rb07lpqdo6" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_g_grp.tscn" id="8_3a44l"]

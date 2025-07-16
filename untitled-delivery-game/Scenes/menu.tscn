@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://d10kefpoiwe0g"]
+[gd_scene load_steps=8 format=3 uid="uid://d10kefpoiwe0g"]
 
 [ext_resource type="Script" uid="uid://yuo2ix14qc7f" path="res://Scenes/menu.gd" id="1_cayip"]
-[ext_resource type="Texture2D" uid="uid://cgh1mm2a1jqoj" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Rect-Medium/PlayIcon/Default.png" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://jkuciylaonk6" path="res://Scenes/Assets/Images/Untitled(1).png" id="2_wwsa2"]
 [ext_resource type="FontFile" uid="uid://dnrwh7nmfvm6x" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/josefin-sans/JosefinSans-Bold.ttf" id="3_cayip"]
+[ext_resource type="Texture2D" uid="uid://bx22kt1qetx4b" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Play/Hover.png" id="3_jsrd8"]
+[ext_resource type="Texture2D" uid="uid://cv72m2ki5yqw1" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Levels/Default.png" id="4_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://cxaeiv061fjyk" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Home/Default.png" id="5_jsrd8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_158mb"]
 font = ExtResource("3_cayip")
 font_size = 32
+font_color = Color(0, 0, 0, 1)
 
-[node name="Control" type="Control"]
+[node name="Start" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,24 +21,49 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cayip")
 
-[node name="Button" type="Button" parent="."]
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_wwsa2")
+
+[node name="Play" type="Button" parent="."]
 layout_mode = 0
-offset_left = 61.0
-offset_top = 501.0
-offset_right = 227.0
-offset_bottom = 584.0
+offset_left = 526.0
+offset_top = 150.0
+offset_right = 622.0
+offset_bottom = 246.0
 scale = Vector2(1.05396, 0.895262)
-icon = ExtResource("1_xhh6f")
+icon = ExtResource("3_jsrd8")
 flat = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Options" type="Button" parent="."]
 layout_mode = 0
-offset_left = 97.0
-offset_top = 109.0
-offset_right = 379.0
-offset_bottom = 141.0
+offset_left = 839.0
+offset_top = 234.0
+offset_right = 935.0
+offset_bottom = 353.0
+icon = ExtResource("4_wbdvm")
+flat = true
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 273.0
+offset_right = 241.0
+offset_bottom = 369.0
+icon = ExtResource("5_jsrd8")
+flat = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 33.0
+offset_right = 611.0
+offset_bottom = 65.0
 scale = Vector2(1.73075, 1.78383)
-text = "Titled Delivery game"
+text = "Untitled Delivery Game"
 label_settings = SubResource("LabelSettings_158mb")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
