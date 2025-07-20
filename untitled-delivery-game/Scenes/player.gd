@@ -14,6 +14,7 @@ var mouse_sens = 0.002
 var grav = 9.8
 
 var is_crouching = false
+var is_running = false
 var last_floor = false
 var coyote = 0.1
 var air_time = 0
@@ -81,8 +82,10 @@ func check_crouch_state():
 	crouch_col.disabled = is_crouching
 func run_state():
 	if Input.is_action_pressed("Sprint"):
+		is_running = not is_running
+	if is_running:
 		speed = 8
-	else:
+	elif not is_running:
 		speed = 5
 func _on_above_head_body_entered(_body: Node3D):
 	can_mantle = false
