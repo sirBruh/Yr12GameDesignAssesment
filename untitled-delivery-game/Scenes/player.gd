@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
+@onready var slide_check = get_node("raycast/slide_check")
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
@@ -20,6 +21,13 @@ var coyote = 0.1
 var air_time = 0
 var can_mantle = true
 var mouse_unlocked = false
+
+var slide_speed = 0
+var fall_distance = 0
+var can_slide = false
+var sliding = false
+var falling = false
+
 
 var stamina = 100
 
