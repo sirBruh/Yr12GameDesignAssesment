@@ -77,12 +77,13 @@ func _input(event):
 	if event.is_action_pressed("Crouch"):
 		check_crouch_state()
 		is_crouching = not is_crouching
+	if Input.is_action_pressed("Sprint"):
+		is_running = not is_running
+		run_state()
 func check_crouch_state():
 	stand_col.disabled = not is_crouching
 	crouch_col.disabled = is_crouching
 func run_state():
-	if Input.is_action_pressed("Sprint"):
-		is_running = not is_running
 	if is_running:
 		speed = 8
 	elif not is_running:
