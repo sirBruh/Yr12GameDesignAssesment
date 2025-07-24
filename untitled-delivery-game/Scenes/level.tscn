@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://cnas2apq7fk72" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_r_grp.tscn" id="19_24uko"]
 [ext_resource type="PackedScene" uid="uid://burmmlbhmtngt" path="res://Scenes/Assets/Nature/Trees/Fall/tree_fall04.tscn" id="20_pnhnk"]
 [ext_resource type="PackedScene" uid="uid://dyf6tug31ipyh" path="res://Scenes/Assets/Nature/Trees/Fall/tree_fall05.tscn" id="21_24uko"]
-[ext_resource type="PackedScene" uid="uid://dvvox8xy1mx21" path="res://Scenes/Assets/Nature/Grass/grass_01.tscn" id="22_53r2q"]
+[ext_resource type="PackedScene" uid="uid://dvvox8xy1mx21" path="res://Scenes/Assets/Nature/Grass/Fall/grass_01.tscn" id="22_53r2q"]
 [ext_resource type="PackedScene" uid="uid://bbc6v5dlc4uwk" path="res://Scenes/Assets/Nature/Bushes/Fall/bush_01.tscn" id="22_u0did"]
 [ext_resource type="PackedScene" uid="uid://d0vp3el2a261n" path="res://Scenes/Assets/Nature/Bushes/Fall/bush_02.tscn" id="23_53r2q"]
 [ext_resource type="PackedScene" uid="uid://d2jbxoyfqir5v" path="res://Scenes/Assets/Nature/Bushes/Fall/bush_03.tscn" id="24_luodc"]
