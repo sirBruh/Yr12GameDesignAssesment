@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx1mkphp7pq54"]
+[gd_scene load_steps=5 format=3 uid="uid://cx1mkphp7pq54"]
 
 [ext_resource type="Script" uid="uid://cy2fdeb5bqrcj" path="res://Scenes/options.gd" id="1_kftxf"]
 [ext_resource type="Texture2D" uid="uid://b4m045isbaj0b" path="res://Scenes/Assets/Images/rlfI7V.jpg" id="2_663nc"]
-[ext_resource type="Texture2D" uid="uid://bw4pfw25yviy8" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png@2x/Star/Small/Active@2x.png" id="3_hvj8k"]
 [ext_resource type="Texture2D" uid="uid://g6qfp61jxgae" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/ArrowLeft/Default.png" id="4_38txh"]
 [ext_resource type="Texture2D" uid="uid://5s372k5rrbk1" path="res://Scenes/Assets/Images/197-1970842_tv-border-png-home-appliance-clipart.png" id="5_5a0sy"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_g5vgl"]
-font_color = Color(0, 0, 0, 1)
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -22,25 +18,6 @@ script = ExtResource("1_kftxf")
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.54)
 texture = ExtResource("2_663nc")
-
-[node name="MenuButton" type="MenuButton" parent="."]
-layout_mode = 0
-offset_left = 222.0
-offset_top = 68.0
-offset_right = 404.0
-offset_bottom = 132.0
-scale = Vector2(0.724617, 0.708611)
-icon = ExtResource("3_hvj8k")
-
-[node name="Label" type="Label" parent="MenuButton"]
-layout_mode = 0
-offset_left = 26.2208
-offset_top = 4.23364
-offset_right = 109.221
-offset_bottom = 27.2336
-scale = Vector2(1.74691, 1.83967)
-text = "Resolution"
-label_settings = SubResource("LabelSettings_g5vgl")
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
