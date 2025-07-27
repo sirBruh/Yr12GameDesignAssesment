@@ -36,8 +36,13 @@
 [ext_resource type="PackedScene" uid="uid://co4uux505t5ti" path="res://Scenes/Assets/fence_01.tscn" id="29_1cgv8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tumq0"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.233507, 0.433047, 0.747738, 1)
+sky_horizon_color = Color(0.630074, 0.767225, 0.785917, 1)
+sky_curve = 0.0461679
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_curve = 0.0336359
+sun_angle_max = 5.18
+sun_curve = 1.33148
 
 [sub_resource type="Sky" id="Sky_k5f4k"]
 sky_material = SubResource("ProceduralSkyMaterial_tumq0")

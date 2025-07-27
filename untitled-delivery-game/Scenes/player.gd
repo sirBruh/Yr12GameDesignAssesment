@@ -6,7 +6,6 @@ extends CharacterBody3D
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
-@onready var slide_check = get_node("raycast/slide_check")
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
@@ -15,19 +14,13 @@ var mouse_sens = 0.002
 var grav = 9.8
 
 var is_crouching = false
+var is_sliding = false
 var is_running = false
 var last_floor = false
 var coyote = 0.1
 var air_time = 0
 var can_mantle = true
 var mouse_unlocked = false
-
-var slide_speed = 0
-var fall_distance = 0
-var can_slide = false
-var sliding = false
-var falling = false
-
 
 var stamina = 100
 
@@ -112,3 +105,7 @@ func check_mantle():
 				
 		else:
 			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+func check_slide():
+	if is_running:
+		if Input.is_action_pressed("Crouch"):
+			is_sliding = true
