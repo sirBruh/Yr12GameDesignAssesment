@@ -1,38 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvvox8xy1mx21"]
+[gd_scene load_steps=4 format=3 uid="uid://dvvox8xy1mx21"]
 
-[ext_resource type="ArrayMesh" uid="uid://6l1ejw7fs2na" path="res://Scenes/Assets/retro_nature_pack/models/OBJ/grass/grass_patch.obj" id="1_kjpia"]
-[ext_resource type="Texture2D" uid="uid://be5ajg5q4ntvj" path="res://Scenes/Assets/retro_nature_pack/textures/grass/grass_patch_fall.png" id="2_p1vkv"]
+[ext_resource type="ArrayMesh" uid="uid://dhfngthdjp8bo" path="res://Scenes/Assets/retro_nature_pack/models/OBJ/grass/grass01.obj" id="1_6kei2"]
+[ext_resource type="Texture2D" uid="uid://dagyj66n1bk8y" path="res://Scenes/Assets/retro_nature_pack/textures/grass/grass_bush_spring.png" id="2_ax7v5"]
 
-[sub_resource type="GDScript" id="GDScript_kjpia"]
-script/source = "extends Node3D
-
-var mesh = load(\"res://Scenes/Assets/Nature/Grass/grass_01.tscn\")
-var mesh_instances: Array = []
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	mesh = load(\"res://Scenes/Assets/Nature/Grass/grass_01.tscn\")
-	for i in range (10):
-		var instance = MeshInstance3D.new()
-		instance.mesh = mesh
-		instance.position = Vector3(i * 2, 0, 0)  
-		add_child(instance)
-		mesh_instances.append(instance)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5mqlh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1eln"]
 transparency = 2
-alpha_scissor_threshold = 0.86
+alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_color = Color(0.745098, 0.807843, 0.627451, 1)
-albedo_texture = ExtResource("2_p1vkv")
+albedo_texture = ExtResource("2_ax7v5")
 
-[node name="Grass01" type="Node3D"]
-script = SubResource("GDScript_kjpia")
+[node name="Grass" type="Node3D"]
 
-[node name="GrassPatch" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_kjpia")
-surface_material_override/0 = SubResource("StandardMaterial3D_5mqlh")
+[node name="Grass01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.15)
+mesh = ExtResource("1_6kei2")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1eln")
+
+[node name="Grass02" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.15, 0, 0.15)
+mesh = ExtResource("1_6kei2")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1eln")
+
+[node name="Grass03" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.15, 0, 0.15)
+mesh = ExtResource("1_6kei2")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1eln")
+
+[node name="Grass04" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.15, 0, -0.15)
+mesh = ExtResource("1_6kei2")
+surface_material_override/0 = SubResource("StandardMaterial3D_l1eln")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cojpy633re2jm"]
+
+[ext_resource type="ArrayMesh" uid="uid://c80aui0hh5tsj" path="res://Scenes/Assets/retro_nature_pack/models/OBJ/grass/grass02.obj" id="1_tcsro"]
+[ext_resource type="Texture2D" uid="uid://dagyj66n1bk8y" path="res://Scenes/Assets/retro_nature_pack/textures/grass/grass_bush_spring.png" id="2_li873"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4rwos"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_li873")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Grass02" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_tcsro")
+surface_material_override/0 = SubResource("StandardMaterial3D_4rwos")

@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
+@onready var half_new = get_node("raycast/half_new")
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
@@ -53,7 +54,7 @@ func control_loop(delta):
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
 		if direction:
-			if is_crouching:
+			if is_crouching and not is_sliding:
 				velocity.x = direction.x * speed / 2
 				velocity.z = direction.z * speed / 2
 			else:
@@ -101,8 +102,8 @@ func check_mantle():
 			gravity = 0
 			if has_ledge and Input.is_action_just_pressed("Jump"):
 				var peek = create_tween()
+				peek.tween_property(self, "position", half_new.global_position, .75)
 				peek.tween_property(self, "position", new_pos.global_position, .75)
-				
 		else:
 			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func check_slide():

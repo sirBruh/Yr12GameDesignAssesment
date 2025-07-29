@@ -1,17 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://bhsmpmawybsuh"]
+[gd_scene load_steps=50 format=3 uid="uid://bhsmpmawybsuh"]
 
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://c77hgmo5456tm" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_a_grp.tscn" id="2_crh0w"]
-[ext_resource type="Script" uid="uid://dtg6ekaowq215" path="res://addons/zylann.hterrain/hterrain.gd" id="2_idpk0"]
 [ext_resource type="Texture2D" uid="uid://3cxjs5b2fabq" path="res://Scenes/Assets/Images/tileable-grass_clover_tt7010116-sample_1.png" id="2_luodc"]
 [ext_resource type="PackedScene" uid="uid://c3rf8nfef33y2" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_b_grp.tscn" id="3_c7le1"]
-[ext_resource type="Resource" uid="uid://bpafssh8060qq" path="res://TerrainData/data.hterrain" id="3_dw52x"]
-[ext_resource type="Script" uid="uid://c607ft0ojtnnx" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="4_ais7f"]
-[ext_resource type="Script" uid="uid://cu5mxqiqobfi8" path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" id="5_ais7f"]
 [ext_resource type="PackedScene" uid="uid://qwtlg3xgu4tg" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_d_grp.tscn" id="5_nngtn"]
-[ext_resource type="Texture2D" uid="uid://bornopxhsnje5" path="res://Scenes/Assets/retro_nature_pack/textures/grass/grass_bush_fall.png" id="6_re0q2"]
 [ext_resource type="PackedScene" uid="uid://b43rb07lpqdo6" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_g_grp.tscn" id="8_3a44l"]
 [ext_resource type="PackedScene" uid="uid://cmji48srutucy" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_h_grp.tscn" id="9_0cmrb"]
+[ext_resource type="Texture2D" uid="uid://dypxyqcieiip6" path="res://Scenes/Assets/Images/QtOzYA.png" id="9_hcs0j"]
 [ext_resource type="PackedScene" uid="uid://btt2dmk6ckcys" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_i_grp.tscn" id="10_pnhnk"]
 [ext_resource type="PackedScene" uid="uid://bfa3d1187i8pp" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_j_grp.tscn" id="11_24uko"]
 [ext_resource type="PackedScene" uid="uid://c6kkbw5y45ohf" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_k_grp.tscn" id="12_gf56v"]
@@ -53,14 +49,110 @@ sky = SubResource("Sky_k5f4k")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="Resource" id="Resource_re0q2"]
-script = ExtResource("4_ais7f")
-mode = 0
-textures = [[], []]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cgv8"]
 albedo_color = Color(0.956371, 0.938298, 1.54018e-06, 1)
 albedo_texture = ExtResource("2_luodc")
+
+[sub_resource type="Gradient" id="Gradient_1cgv8"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hcs0j"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t205d"]
+seamless = true
+color_ramp = SubResource("Gradient_1cgv8")
+noise = SubResource("FastNoiseLite_hcs0j")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_idpk0"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise_texture": SubResource("NoiseTexture2D_t205d"),
+&"projection_threshold": 0.8
+}
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_t205d"]
+name = "grass_01"
+scene_file = ExtResource("22_53r2q")
+last_lod = 3
+last_shadow_lod = 3
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_idpk0"]
+name = "tree_fall01"
+id = 1
+scene_file = ExtResource("17_nngtn")
+density = 0.219391
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dw52x"]
+name = "tree_fall02"
+id = 2
+scene_file = ExtResource("18_vofx3")
+density = 0.447877
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_ais7f"]
+name = "tree_fall03"
+id = 3
+scene_file = ExtResource("19_0cmrb")
+density = 0.225026
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_re0q2"]
+name = "tree_fall04"
+id = 4
+scene_file = ExtResource("20_pnhnk")
+density = 0.264111
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_fq0f7"]
+name = "tree_fall05"
+id = 5
+scene_file = ExtResource("21_24uko")
+density = 0.264111
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_bp4cd"]
+name = "tileable-grass_clover_tt7010116-sample_1"
+albedo_texture = ExtResource("2_luodc")
+normal_texture = ExtResource("9_hcs0j")
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_d3deu"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_t205d"), SubResource("Terrain3DMeshAsset_idpk0"), SubResource("Terrain3DMeshAsset_dw52x"), SubResource("Terrain3DMeshAsset_ais7f"), SubResource("Terrain3DMeshAsset_re0q2"), SubResource("Terrain3DMeshAsset_fq0f7")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_bp4cd")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t205d"]
 size = Vector3(6, 2.2, 1.3)
@@ -72,7 +164,6 @@ size = Vector3(10.1, 1.7, 0.2)
 size = Vector3(3.6, 27.5, 139.3)
 
 [node name="Main" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -86,39 +177,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Environment" type="Node3D" parent="."]
 
-[node name="HTerrain" type="Node3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.74, 0, -69.065)
-script = ExtResource("2_idpk0")
-map_scale = Vector3(0.217, 1, 0.27)
-_terrain_data = ExtResource("3_dw52x")
-chunk_size = 32
-collision_enabled = true
-collision_layer = 3
-collision_mask = 3
-physics_material = null
-shader_type = "Classic4Lite"
-custom_shader = null
-custom_globalmap_shader = null
-texture_set = SubResource("Resource_re0q2")
-render_layers = 1
-cast_shadow = 1
-shader_params/u_ground_uv_scale = 20
-shader_params/u_depth_blending = true
-shader_params/u_triplanar = false
-shader_params/u_tile_reduction = Vector4(0, 0, 0, 0)
-shader_params/u_specular = 0.5
-metadata/_custom_type_script = "uid://dtg6ekaowq215"
-
-[node name="HTerrainDetailLayer" type="Node3D" parent="Environment/HTerrain"]
-script = ExtResource("5_ais7f")
-texture = ExtResource("6_re0q2")
-shader_params/u_globalmap_tint_bottom = 0.0
-shader_params/u_globalmap_tint_top = 0.0
-shader_params/u_bottom_ao = 0.0
-shader_params/u_instance_scale = Vector3(1, 1, 1)
-shader_params/u_roughness = 0.9
-metadata/_custom_type_script = "uid://cu5mxqiqobfi8"
-
 [node name="Baseplate" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(8.64, 0, 0, 0, 1, 0, 0, 0, 4.6, 0, 0, 0)
 visible = false
@@ -128,6 +186,15 @@ collision_layer = 2
 collision_mask = 2
 size = Vector3(12.9, 0.1, 30)
 material = SubResource("StandardMaterial3D_1cgv8")
+
+[node name="Terrain3D" type="Terrain3D" parent="Environment"]
+data_directory = "res://addons/terrain_3d"
+material = SubResource("Terrain3DMaterial_idpk0")
+assets = SubResource("Terrain3DAssets_d3deu")
+collision_layer = 3
+collision_mask = 3
+top_level = true
+metadata/_edit_lock_ = true
 
 [node name="Houses" type="Node3D" parent="Environment"]
 
