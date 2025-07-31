@@ -1,9 +1,12 @@
-[gd_scene load_steps=51 format=3 uid="uid://bhsmpmawybsuh"]
+[gd_scene load_steps=56 format=3 uid="uid://bhsmpmawybsuh"]
 
+[ext_resource type="Script" uid="uid://byql2ma4wk2qn" path="res://addons/michi/scripts/nodes/RoadManager.gd" id="1_dw52x"]
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
+[ext_resource type="Script" uid="uid://f7c5c0tshrvx" path="res://addons/michi/scripts/resources/RoadClass.gd" id="2_ais7f"]
 [ext_resource type="PackedScene" uid="uid://c77hgmo5456tm" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_a_grp.tscn" id="2_crh0w"]
 [ext_resource type="Texture2D" uid="uid://3cxjs5b2fabq" path="res://Scenes/Assets/Images/tileable-grass_clover_tt7010116-sample_1.png" id="2_luodc"]
 [ext_resource type="PackedScene" uid="uid://c3rf8nfef33y2" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_b_grp.tscn" id="3_c7le1"]
+[ext_resource type="Script" uid="uid://ywofrik82wo6" path="res://addons/michi/scripts/nodes/RoadPoint.gd" id="3_re0q2"]
 [ext_resource type="PackedScene" uid="uid://qwtlg3xgu4tg" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_d_grp.tscn" id="5_nngtn"]
 [ext_resource type="PackedScene" uid="uid://b43rb07lpqdo6" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_g_grp.tscn" id="8_3a44l"]
 [ext_resource type="PackedScene" uid="uid://cmji48srutucy" path="res://Scenes/Assets/ModularBrickStructures/Scenes/Builds/build_h_grp.tscn" id="9_0cmrb"]
@@ -30,6 +33,27 @@
 [ext_resource type="PackedScene" uid="uid://dnv00k1mlqjf2" path="res://Scenes/Assets/Nature/Bushes/Fall/bush_04.tscn" id="25_1cgv8"]
 [ext_resource type="PackedScene" uid="uid://sni2k45703bl" path="res://Scenes/Assets/Nature/Bushes/Fall/bush_05.tscn" id="26_hcs0j"]
 [ext_resource type="PackedScene" uid="uid://co4uux505t5ti" path="res://Scenes/Assets/fence_01.tscn" id="29_1cgv8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fq0f7"]
+
+[sub_resource type="Resource" id="Resource_bp4cd"]
+script = ExtResource("2_ais7f")
+name = ""
+road_width = 3.25
+road_height = 0.02
+road_material = SubResource("ShaderMaterial_fq0f7")
+road_disable_mode = 0
+road_collision_layer = 3
+road_collision_mask = 3
+road_collision_priority = 1.0
+has_sidewalk = false
+sidewalk_width = 0.8
+sidewalk_height = 0.08
+sidewalk_disable_mode = 0
+sidewalk_collision_layer = 3
+sidewalk_collision_mask = 3
+sidewalk_collision_priority = 1.0
+metadata/_custom_type_script = "uid://f7c5c0tshrvx"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tumq0"]
 sky_top_color = Color(0.233507, 0.433047, 0.747738, 1)
@@ -94,7 +118,7 @@ _shader_parameters = {
 &"projection_threshold": 0.8
 }
 
-[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_t205d"]
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_hcs0j"]
 name = "grass_01"
 scene_file = ExtResource("22_53r2q")
 last_lod = 3
@@ -151,7 +175,7 @@ albedo_texture = ExtResource("2_luodc")
 normal_texture = ExtResource("9_hcs0j")
 
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_d3deu"]
-mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_t205d"), SubResource("Terrain3DMeshAsset_idpk0"), SubResource("Terrain3DMeshAsset_dw52x"), SubResource("Terrain3DMeshAsset_ais7f"), SubResource("Terrain3DMeshAsset_re0q2"), SubResource("Terrain3DMeshAsset_fq0f7")])
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_hcs0j"), SubResource("Terrain3DMeshAsset_idpk0"), SubResource("Terrain3DMeshAsset_dw52x"), SubResource("Terrain3DMeshAsset_ais7f"), SubResource("Terrain3DMeshAsset_re0q2"), SubResource("Terrain3DMeshAsset_fq0f7")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_bp4cd")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t205d"]
@@ -167,6 +191,25 @@ size = Vector3(0.2, 2.8, 9.5)
 size = Vector3(3.6, 27.5, 139.3)
 
 [node name="Main" type="Node3D"]
+
+[node name="RoadManager" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+script = ExtResource("1_dw52x")
+road_class = SubResource("Resource_bp4cd")
+layers = 3
+metadata/_custom_type_script = "uid://byql2ma4wk2qn"
+
+[node name="RoadPoint" type="Marker3D" parent="RoadManager"]
+transform = Transform3D(0.151261, 0, 0.988494, 0, 1, 0, -0.988494, 0, 0.151261, -37.405, 0, -47.6)
+script = ExtResource("3_re0q2")
+next_road_point_path = NodePath("../RoadPoint2")
+metadata/_custom_type_script = "uid://ywofrik82wo6"
+
+[node name="RoadPoint2" type="Marker3D" parent="RoadManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1, 0, -19.2)
+script = ExtResource("3_re0q2")
+prev_road_point_path = NodePath("../RoadPoint")
+metadata/_custom_type_script = "uid://ywofrik82wo6"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

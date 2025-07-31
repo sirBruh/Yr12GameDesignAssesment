@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dypxyqcieiip6"
-path.s3tc="res://.godot/imported/QtOzYA.png-65835b641c8c56260ffb105bdeba1210.s3tc.ctex"
+uid="uid://gwsfrjf2ov3c"
+path.s3tc="res://.godot/imported/asphalt.jpg-98d38871e2c5ed378c8edfc08f81f3ca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/Assets/Images/QtOzYA.png"
-dest_files=["res://.godot/imported/QtOzYA.png-65835b641c8c56260ffb105bdeba1210.s3tc.ctex"]
+source_file="res://addons/michi/materials/jp/asphalt.jpg"
+dest_files=["res://.godot/imported/asphalt.jpg-98d38871e2c5ed378c8edfc08f81f3ca.s3tc.ctex"]
 
 [params]
 

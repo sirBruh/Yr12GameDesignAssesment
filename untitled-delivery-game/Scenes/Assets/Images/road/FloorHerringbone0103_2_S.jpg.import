@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dypxyqcieiip6"
-path.s3tc="res://.godot/imported/QtOzYA.png-65835b641c8c56260ffb105bdeba1210.s3tc.ctex"
+uid="uid://cbb0lxd0bh0dd"
+path.s3tc="res://.godot/imported/FloorHerringbone0103_2_S.jpg-42058447e3f334bfc6a75a815a9d8ff5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/Assets/Images/QtOzYA.png"
-dest_files=["res://.godot/imported/QtOzYA.png-65835b641c8c56260ffb105bdeba1210.s3tc.ctex"]
+source_file="res://Scenes/Assets/Images/road/FloorHerringbone0103_2_S.jpg"
+dest_files=["res://.godot/imported/FloorHerringbone0103_2_S.jpg-42058447e3f334bfc6a75a815a9d8ff5.s3tc.ctex"]
 
 [params]
 
