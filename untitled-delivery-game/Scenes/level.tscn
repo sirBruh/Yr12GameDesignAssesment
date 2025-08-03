@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bhsmpmawybsuh"]
+[gd_scene load_steps=55 format=3 uid="uid://bhsmpmawybsuh"]
 
 [ext_resource type="Script" uid="uid://byql2ma4wk2qn" path="res://addons/michi/scripts/nodes/RoadManager.gd" id="1_dw52x"]
 [ext_resource type="PackedScene" uid="uid://dbgxrl1kb88od" path="res://Scenes/player.tscn" id="1_tumq0"]
@@ -34,14 +34,11 @@
 [ext_resource type="PackedScene" uid="uid://sni2k45703bl" path="res://Scenes/Assets/Nature/Bushes/Fall/bush_05.tscn" id="26_hcs0j"]
 [ext_resource type="PackedScene" uid="uid://co4uux505t5ti" path="res://Scenes/Assets/fence_01.tscn" id="29_1cgv8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fq0f7"]
-
 [sub_resource type="Resource" id="Resource_bp4cd"]
 script = ExtResource("2_ais7f")
 name = ""
 road_width = 3.25
 road_height = 0.02
-road_material = SubResource("ShaderMaterial_fq0f7")
 road_disable_mode = 0
 road_collision_layer = 3
 road_collision_mask = 3
@@ -209,6 +206,13 @@ metadata/_custom_type_script = "uid://ywofrik82wo6"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1, 0, -19.2)
 script = ExtResource("3_re0q2")
 prev_road_point_path = NodePath("../RoadPoint")
+next_road_point_path = NodePath("../RoadPoint3")
+metadata/_custom_type_script = "uid://ywofrik82wo6"
+
+[node name="RoadPoint3" type="Marker3D" parent="RoadManager"]
+transform = Transform3D(-0.0784591, 0, -0.996917, 0, 1, 0, 0.996917, 0, -0.0784591, 0, 0.3, 0)
+script = ExtResource("3_re0q2")
+prev_road_point_path = NodePath("../RoadPoint2")
 metadata/_custom_type_script = "uid://ywofrik82wo6"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
