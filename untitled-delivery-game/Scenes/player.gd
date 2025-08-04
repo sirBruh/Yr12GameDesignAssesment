@@ -54,7 +54,7 @@ func control_loop(delta):
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
 		if direction:
-			if is_crouching and not is_sliding:
+			if is_crouching:
 				velocity.x = direction.x * speed / 2
 				velocity.z = direction.z * speed / 2
 			else:
@@ -78,6 +78,10 @@ func _input(event):
 			cam_pivot.rotation.x = clamp(cam_pivot.rotation.x, -PI/2, PI/2)
 	if event.is_action_pressed("Crouch"):
 		check_crouch_state()
+		if not is_crouching:
+			$AnimationPlayer.play("StandtoCrouch")
+		elif is_crouching:
+			$AnimationPlayer.play("CrouchtoStand")
 		is_crouching = not is_crouching
 	if Input.is_action_pressed("Sprint"):
 		is_running = not is_running
