@@ -11,8 +11,8 @@ height = 1.6
 height = 1.0
 radius = 0.25
 
-[sub_resource type="Animation" id="Animation_cvnsp"]
-resource_name = "StandtoCrouch"
+[sub_resource type="Animation" id="Animation_6t5aa"]
+resource_name = "CrouchtoStand"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -24,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0.7, 0), Vector3(0, 0.1, 0)]
+"values": [Vector3(0, 0.1, 0), Vector3(0, 0.7, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_v0iea"]
@@ -42,8 +42,8 @@ tracks/0/keys = {
 "values": [Vector3(0, 0.7, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_6t5aa"]
-resource_name = "CrouchtoStand"
+[sub_resource type="Animation" id="Animation_cvnsp"]
+resource_name = "StandtoCrouch"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -55,7 +55,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0.1, 0), Vector3(0, 0.7, 0)]
+"values": [Vector3(0, 0.7, 0), Vector3(0, 0.1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6t5aa"]
