@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
+@onready var half_new = get_node("raycast/half_new")
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
@@ -14,6 +15,7 @@ var mouse_sens = 0.002
 var grav = 9.8
 
 var is_crouching = false
+var is_sliding = false
 var is_running = false
 var last_floor = false
 var coyote = 0.1
@@ -76,6 +78,10 @@ func _input(event):
 			cam_pivot.rotation.x = clamp(cam_pivot.rotation.x, -PI/2, PI/2)
 	if event.is_action_pressed("Crouch"):
 		check_crouch_state()
+		if not is_crouching:
+			$AnimationPlayer.play("StandtoCrouch")
+		elif is_crouching:
+			$AnimationPlayer.play("CrouchtoStand")
 		is_crouching = not is_crouching
 	if Input.is_action_pressed("Sprint"):
 		is_running = not is_running
@@ -100,7 +106,11 @@ func check_mantle():
 			gravity = 0
 			if has_ledge and Input.is_action_just_pressed("Jump"):
 				var peek = create_tween()
+				peek.tween_property(self, "position", half_new.global_position, .75)
 				peek.tween_property(self, "position", new_pos.global_position, .75)
-				
 		else:
 			gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+func check_slide():
+	if is_running:
+		if Input.is_action_pressed("Crouch"):
+			is_sliding = true

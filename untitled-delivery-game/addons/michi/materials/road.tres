@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://7pgsgc2p344l"]
+
+[ext_resource type="Shader" uid="uid://df4jlay6xdqow" path="res://addons/michi/shaders/road.gdshader" id="1_d0lwh"]
+[ext_resource type="Texture2D" uid="uid://cxcchrtuelh4u" path="res://addons/michi/materials/jp/asphalt.jpg" id="2_mgknu"]
+[ext_resource type="Texture2D" uid="uid://ocqnqocqjlv0" path="res://addons/michi/materials/jp/white_line.png" id="3_5basc"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_d0lwh")
+shader_parameter/asphalt_texture = ExtResource("2_mgknu")
+shader_parameter/white_line_texture = ExtResource("3_5basc")
+shader_parameter/repeat_per_meter = 8.0
+shader_parameter/asphalt_uv_scale = Vector2(3, 3)
+shader_parameter/metallic = 0.0
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 1.0
