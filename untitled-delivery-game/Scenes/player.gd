@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var stand_col = get_node("standing")
 @onready var crouch_col = get_node("crouching")
 @onready var cam_pivot = get_node("cam_pivot")
+@onready var camera = get_node("cam_pivot/Camera3D")
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
@@ -13,7 +14,9 @@ var speed = 5.0
 var jump_velocity = 4.5
 var mouse_sens = 0.002
 var grav = 9.8
-
+var fov_walking = 75.0
+var fov_running = 95.0
+	 
 var is_crouching = false
 var is_sliding = false
 var is_running = false
@@ -32,7 +35,12 @@ func _physics_process(delta: float) -> void:
 	last_floor = is_on_floor()
 	check_mantle()
 	control_loop(delta)
-	run_state()
+	if is_running:
+		speed = 8
+		camera.fov = lerp(camera.fov, fov_running, delta * 10)
+	elif not is_running:
+		speed = 5
+		camera.fov = lerp(camera.fov, fov_walking, delta * 10)
 	head_control()
 	move_and_slide()
 
@@ -85,15 +93,9 @@ func _input(event):
 		is_crouching = not is_crouching
 	if Input.is_action_pressed("Sprint"):
 		is_running = not is_running
-		run_state()
 func check_crouch_state():
 	stand_col.disabled = not is_crouching
 	crouch_col.disabled = is_crouching
-func run_state():
-	if is_running:
-		speed = 8
-	elif not is_running:
-		speed = 5
 func _on_above_head_body_entered(_body: Node3D):
 	can_mantle = false
 func _on_above_head_body_exited(_body: Node3D):
