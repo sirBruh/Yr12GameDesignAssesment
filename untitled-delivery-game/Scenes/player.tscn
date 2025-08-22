@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbgxrl1kb88od"]
+[gd_scene load_steps=11 format=3 uid="uid://dbgxrl1kb88od"]
 
 [ext_resource type="Script" uid="uid://dahw8r5iaajoo" path="res://Scenes/player.gd" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://cde83jt0y0njs" path="res://Scenes/Assets/audio/running-on-concrete-268478.mp3" id="2_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://bjq8iwtrm442h" path="res://Scenes/Assets/audio/walking-on-concrete-ver-2-268513.mp3" id="3_vgqql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
 
@@ -112,5 +114,11 @@ shape = SubResource("CylinderShape3D_v0iea")
 libraries = {
 &"": SubResource("AnimationLibrary_6t5aa")
 }
+
+[node name="running" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_6t5aa")
+
+[node name="walking" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_vgqql")
 
 [connection signal="body_entered" from="above_head" to="." method="_on_above_head_body_entered"]

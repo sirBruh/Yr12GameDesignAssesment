@@ -8,6 +8,8 @@ extends CharacterBody3D
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
 @onready var half_new = get_node("raycast/half_new")
+@onready var running: AudioStreamPlayer3D = $running
+@onready var walking: AudioStreamPlayer3D = $walking
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
@@ -71,6 +73,13 @@ func control_loop(delta):
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 8)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 8)
+		if speed == 5:
+			walking.play()
+		elif speed == 8:
+			running.play()
+		elif speed == 0:
+			running.stop()
+			walking.stop
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 2) 
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 2)
