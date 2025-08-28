@@ -120,5 +120,6 @@ stream = ExtResource("2_6t5aa")
 
 [node name="walking" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_vgqql")
+volume_db = 6.12
 
 [connection signal="body_entered" from="above_head" to="." method="_on_above_head_body_entered"]

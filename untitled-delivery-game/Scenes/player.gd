@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+
 @onready var stand_col = get_node("standing")
 @onready var crouch_col = get_node("crouching")
 @onready var cam_pivot = get_node("cam_pivot")
@@ -32,7 +33,6 @@ var stamina = 100
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
 func _physics_process(delta: float) -> void:
 	last_floor = is_on_floor()
 	check_mantle()
@@ -60,6 +60,7 @@ func control_loop(delta):
 	else:
 		air_time += delta
 	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	var input_dir := Input.get_vector("Left", "Right", "Forward", "Backward")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
@@ -73,13 +74,7 @@ func control_loop(delta):
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 8)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 8)
-		if speed == 5:
-			walking.play()
-		elif speed == 8:
-			running.play()
-		elif speed == 0:
-			running.stop()
-			walking.stop
+		
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 2) 
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 2)

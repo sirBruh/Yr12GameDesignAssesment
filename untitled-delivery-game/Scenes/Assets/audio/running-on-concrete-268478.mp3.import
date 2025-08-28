@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/running-on-concrete-268478.mp3-af1cce949506f7
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
