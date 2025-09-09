@@ -1,14 +1,17 @@
 extends CharacterBody3D
 
+const movement_threshold = 0.075
 
 @onready var stand_col = get_node("standing")
 @onready var crouch_col = get_node("crouching")
 @onready var cam_pivot = get_node("cam_pivot")
 @onready var camera = get_node("cam_pivot/Camera3D")
+@onready var pickup_ray = get_node("cam_pivot/Camera3D/pickup_ray")
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
 @onready var half_new = get_node("raycast/half_new")
+@onready var inventory = $Inventory
 @onready var running: AudioStreamPlayer3D = $running
 @onready var walking: AudioStreamPlayer3D = $walking
 
@@ -19,7 +22,7 @@ var mouse_sens = 0.002
 var grav = 9.8
 var fov_walking = 75.0
 var fov_running = 95.0
-	 
+ 
 var is_crouching = false
 var is_sliding = false
 var is_running = false
@@ -74,15 +77,40 @@ func control_loop(delta):
 		else:
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 8)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 8)
-		
+		var is_moving = abs(velocity.x) > movement_threshold or abs(velocity.z) > movement_threshold
+		if is_moving:
+			if speed == 5:
+				if !walking.playing:
+					walking.play()
+				if running.playing:
+					running.stop()
+			elif speed == 8:
+				if !running.playing:
+					running.play()
+				if walking.playing:
+					walking.stop()
+		else:
+			if walking.playing:
+				walking.stop()
+			if running.playing:
+				running.stop()
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 2) 
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 2)
+		if walking.playing:
+			walking.stop()
+		if running.playing:
+			running.stop()
 func head_control():
 	if Input.is_action_just_pressed("Unlock"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE else Input.MOUSE_MODE_VISIBLE
 		mouse_unlocked = not mouse_unlocked
 func _input(event):
+	if event.is_action_pressed("Interact"):
+		if pickup_ray.is_colliding():
+			var obj = pickup_ray.get_collider()
+			if obj and obj.has_method("pickup"):
+				obj.pickup(inventory)
 	if event is InputEventMouseMotion:
 		if mouse_unlocked == false:
 			rotate_y(-event.relative.x * mouse_sens)
@@ -120,3 +148,6 @@ func check_slide():
 	if is_running:
 		if Input.is_action_pressed("Crouch"):
 			is_sliding = true
+func pickup(inventory):
+	inventory.add_item()
+	queue_free()
