@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://wcaxl7r66rrm"]
+
+[ext_resource type="Script" uid="uid://cskxf3m8p0ik4" path="res://Scenes/box.gd" id="1_bqn3j"]
+[ext_resource type="ArrayMesh" uid="uid://cmtmh4jdeiyfm" path="res://Scenes/Assets/Man-Made/Box/CardboardBox_1.obj" id="1_g2tbl"]
+[ext_resource type="Texture2D" uid="uid://bekcu7ig153ct" path="res://Scenes/Assets/Man-Made/Box/CardboardBox_1_512.png" id="2_oq5cr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oq5cr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqn3j"]
+albedo_texture = ExtResource("2_oq5cr")
+
+[node name="PickupBox" type="RigidBody3D"]
+script = ExtResource("1_bqn3j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_oq5cr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.90848, 0, 0, 0, 1.90848, 0, 0, 0, 1.90848, 0, 0, 0)
+layers = 3
+mesh = ExtResource("1_g2tbl")
+surface_material_override/0 = SubResource("StandardMaterial3D_bqn3j")

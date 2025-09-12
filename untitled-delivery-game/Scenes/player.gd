@@ -6,7 +6,7 @@ const movement_threshold = 0.075
 @onready var crouch_col = get_node("crouching")
 @onready var cam_pivot = get_node("cam_pivot")
 @onready var camera = get_node("cam_pivot/Camera3D")
-@onready var pickup_ray = get_node("cam_pivot/Camera3D/pickup_ray")
+@onready var pickup_ray: RayCast3D = $cam_pivot/Camera3D/pickup_ray
 @onready var top_head = get_node("raycast/top_head")
 @onready var face_lvl = get_node("raycast/face")
 @onready var new_pos = get_node("raycast/new_pos")
@@ -15,6 +15,7 @@ const movement_threshold = 0.075
 @onready var running: AudioStreamPlayer3D = $running
 @onready var walking: AudioStreamPlayer3D = $walking
 
+var held_object: Node3D = null
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0
 var jump_velocity = 4.5
@@ -107,10 +108,15 @@ func head_control():
 		mouse_unlocked = not mouse_unlocked
 func _input(event):
 	if event.is_action_pressed("Interact"):
-		if pickup_ray.is_colliding():
+		if held_object == null and pickup_ray.is_colliding():
 			var obj = pickup_ray.get_collider()
-			if obj and obj.has_method("pickup"):
-				obj.pickup(inventory)
+			if obj and obj.has_method("pickup_hold"):
+				held_object = obj
+				obj.pickup_hold(pickup_ray)
+	if event.is_action_pressed("Drop") and held_object:
+		if held_object.has_method("drop"):
+			held_object.drop()
+			held_object = null
 	if event is InputEventMouseMotion:
 		if mouse_unlocked == false:
 			rotate_y(-event.relative.x * mouse_sens)
@@ -148,6 +154,3 @@ func check_slide():
 	if is_running:
 		if Input.is_action_pressed("Crouch"):
 			is_sliding = true
-func pickup(inventory):
-	inventory.add_item()
-	queue_free()
