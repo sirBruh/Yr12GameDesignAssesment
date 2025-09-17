@@ -4,16 +4,19 @@ extends RigidBody3D
 
 var is_held = false
 var pickup_ray: RayCast3D = null
+var hold_offset: Transform3D
+var hold_distance: float = 3.0
 
 func pickup_hold(raycast: RayCast3D):
 	is_held = true
 	pickup_ray = raycast
-	freeze = true
+	hold_offset = pickup_ray.global_transform.affine_inverse() * global_transform
 func drop():
 	is_held = false
 	pickup_ray = null
-	freeze = false
 func _physics_process(delta):
 	if is_held and pickup_ray:
-		var target_pos = pickup_ray.to_global(pickup_ray.target_position)
-		global_transform.origin = target_pos
+		var target_pos = pickup_ray.global_transform.origin + pickup_ray.global_transform.basis.z * -hold_distance
+		var direction = target_pos - global_transform.origin
+		linear_velocity = direction * 6.0
+		angular_velocity = Vector3.ZERO

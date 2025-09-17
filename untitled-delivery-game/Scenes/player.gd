@@ -23,7 +23,8 @@ var mouse_sens = 0.002
 var grav = 9.8
 var fov_walking = 75.0
 var fov_running = 95.0
- 
+var MOUSE_WHEEL_UP = 4
+var MOUSE_WHEEL_DOWN = 5
 var is_crouching = false
 var is_sliding = false
 var is_running = false
@@ -118,6 +119,11 @@ func _input(event):
 			held_object.drop()
 			held_object = null
 	if event is InputEventMouseMotion:
+		if held_object:
+				if Input.is_action_just_pressed("Push"):
+					held_object.hold_distance += 0.5
+				if Input.is_action_just_pressed("Pull"):
+					held_object.hold_distance = max(1.0, held_object.hold_distance - 0.5)
 		if mouse_unlocked == false:
 			rotate_y(-event.relative.x * mouse_sens)
 			cam_pivot.rotate_x(-event.relative.y * mouse_sens)
