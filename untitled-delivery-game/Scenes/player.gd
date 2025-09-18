@@ -14,7 +14,6 @@ const movement_threshold = 0.075
 @onready var inventory = $Inventory
 @onready var running: AudioStreamPlayer3D = $running
 @onready var walking: AudioStreamPlayer3D = $walking
-
 var held_object: Node3D = null
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var speed = 5.0

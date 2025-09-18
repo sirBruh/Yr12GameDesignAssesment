@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbgxrl1kb88od"]
+[gd_scene load_steps=13 format=3 uid="uid://dbgxrl1kb88od"]
 
 [ext_resource type="Script" uid="uid://dahw8r5iaajoo" path="res://Scenes/player.gd" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://cde83jt0y0njs" path="res://Scenes/Assets/audio/running-on-concrete-268478.mp3" id="2_6t5aa"]
 [ext_resource type="Script" uid="uid://cnwcls74wsbk7" path="res://Scenes/inventory.gd" id="2_vgqql"]
+[ext_resource type="Script" uid="uid://sesqyhkbqvqn" path="res://Scenes/cam_pivot.gd" id="3_fkybt"]
 [ext_resource type="AudioStream" uid="uid://bjq8iwtrm442h" path="res://Scenes/Assets/audio/walking-on-concrete-ver-2-268513.mp3" id="3_vgqql"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f60y1"]
@@ -77,6 +78,7 @@ script = ExtResource("2_vgqql")
 
 [node name="cam_pivot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+script = ExtResource("3_fkybt")
 
 [node name="Camera3D" type="Camera3D" parent="cam_pivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0, 0)
