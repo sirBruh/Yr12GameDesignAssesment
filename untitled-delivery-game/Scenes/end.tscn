@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://784lg3x0lwno"]
+
+[ext_resource type="Texture2D" uid="uid://c4kj56edn4hy4" path="res://Scenes/Untitled.png" id="1_02kpm"]
+[ext_resource type="Script" uid="uid://c6s3swhpmbfe5" path="res://Scenes/end.gd" id="1_ql4ve"]
+[ext_resource type="Texture2D" uid="uid://cxaeiv061fjyk" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Home/Default.png" id="2_ql4ve"]
+[ext_resource type="Texture2D" uid="uid://wydyval3dpnh" path="res://Scenes/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/Buttons/Square-Medium/Repeat/Default.png" id="3_q5l5q"]
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ql4ve")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_02kpm")
+
+[node name="Home" type="Button" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 322.0
+offset_right = 813.0
+offset_bottom = 418.0
+icon = ExtResource("2_ql4ve")
+flat = true
+
+[node name="Retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 184.0
+offset_right = 813.0
+offset_bottom = 280.0
+icon = ExtResource("3_q5l5q")
+flat = true
+
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]
